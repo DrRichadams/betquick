@@ -1,6 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import logo from "../../../public/pngs/betquick_logo.png"
+import uk_flag from "../../../public/pngs/uk_flag.png"
+import { HiMiniCog6Tooth } from "react-icons/hi2";
+import { IoChatbubbleEllipses } from "react-icons/io5";
 
 const MainNav = () => {
   return (
@@ -12,11 +15,18 @@ const MainNav = () => {
             </div>
             <div className="right_side_content">
                 <div className="auth_btns_box">
-                    <button>Sign up</button>
-                    <button>Log in</button>
+                    <button className='nav_btn_signup'>Sign up</button>
+                    <button className='nav_btn_login'>Log in</button>
                 </div>
-                <div className="country_language_option_box"></div>
-                <div className="chat_btn"></div>
+                <div className="country_language_option_box">
+                    <div className="flag_circle">
+                        <Image src={uk_flag} alt='flag' width={80} height={50} style={{ width: "60px", height: "100%" }} />
+                    </div>
+                    <HiMiniCog6Tooth size={25} color='#d5d5d5' />
+                </div>
+                <div className="chat_btn">
+                    <IoChatbubbleEllipses size={22} color='#d5d5d5' />
+                </div>
             </div>
         </div>
 

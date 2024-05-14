@@ -1,0 +1,76 @@
+
+
+.nav_top_menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.right_side_content {
+  display: flex;
+  gap: 12px;
+}
+
+.auth_btns_box {
+  display: flex;
+  align-items: center;
+  margin: 0 12px;
+  gap: 12px;
+}
+
+.auth_btns_box button {
+  /* background-color: gray; */
+  width: 120px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.nav_btn_signup {
+  border: 1px solid #B1BF24;
+  color: #B1BF24;
+}
+
+.nav_btn_login {
+  background-color: #B1BF24;
+  color: #fff;
+}
+
+
+.country_language_option_box {
+  display: flex;
+  background-color: #ffffff18;
+  /* width: 45px; */
+  height: 45px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffffff2e;
+  padding: 0 12px;
+  gap: 8px;
+}
+
+.chat_btn {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff18;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffffff2e;
+}
+
+.flag_circle {
+  background-color: red;
+  /* padding: 12px; */
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  overflow: hidden;
+}
