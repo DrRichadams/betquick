@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="main_container" style={{ padding: "0 200px" }}>
-      <MainNav />
+    <main className="main_container">
+      {/* <MainNav /> */}
     </main>
   );
 }
