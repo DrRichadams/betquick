@@ -2,7 +2,7 @@ import React from 'react'
 
 function FootballPage() {
   return (
-    <div>FootballPage</div>
+    <div className="main_container">FootballPage</div>
   )
 }
 

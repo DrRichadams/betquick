@@ -2,7 +2,7 @@ import React from 'react'
 
 function CopyBettingPage() {
   return (
-    <div>CopyBettingPage</div>
+    <div className="main_container">CopyBettingPage</div>
   )
 }
 

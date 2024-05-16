@@ -2,7 +2,7 @@ import React from 'react'
 
 function AwardFinancePage() {
   return (
-    <div>AwardFinancePage</div>
+    <div className="main_container">AwardFinancePage</div>
   )
 }
 

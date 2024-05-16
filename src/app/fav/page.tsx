@@ -2,7 +2,7 @@ import React from 'react'
 
 function FavPage() {
   return (
-    <div>FavPage</div>
+    <div className="main_container">FavPage</div>
   )
 }
 

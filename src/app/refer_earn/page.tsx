@@ -2,7 +2,7 @@ import React from 'react'
 
 function ReferEarnPage() {
   return (
-    <div>ReferEarnPage</div>
+    <div className="main_container">ReferEarnPage</div>
   )
 }
 

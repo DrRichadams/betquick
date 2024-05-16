@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "../styles/globals.css";
 import "../styles/navigation.css";
 import MainNav from "@/components/navigatioin/main_nav";
+import Footer from "@/components/footer/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"], variable: '--font-mont' });
 
 export const metadata: Metadata = {
   title: "Betquick",
@@ -18,9 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <MainNav />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,5 +1,4 @@
-import MainNav from "@/components/navigatioin/main_nav";
-import Image from "next/image";
+import React from "react";
 
 export default function Home() {
   return (

@@ -2,7 +2,7 @@ import React from 'react'
 
 function LivePage() {
   return (
-    <div>LivePage</div>
+    <div className="main_container">LivePage</div>
   )
 }
 

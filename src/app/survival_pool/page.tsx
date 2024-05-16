@@ -2,7 +2,7 @@ import React from 'react'
 
 function SurvivalPoolPage() {
   return (
-    <div>SurvivalPoolPage</div>
+    <div className="main_container">SurvivalPoolPage</div>
   )
 }
 
