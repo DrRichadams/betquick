@@ -1,5 +1,11 @@
 
 
+.left_side_content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .nav_top_menu {
   display: flex;
   justify-content: space-between;
@@ -122,4 +128,98 @@
   /* color: red; */
   font-family: sans-serif;
   font-size: 1rem;
+}
+
+
+
+
+/* AUTHENTICATED ITEM STYLES */
+
+.nav_btn_bonuses {
+  background-color: #B1BF24;
+  display: flex;
+  gap: 8px;
+  padding: 8px 13px;
+  border-radius: 12px;
+}
+
+.nav_btn_bonuses p {
+  font-family: var(--font-mont);
+  font-weight: 600;
+  color: #fff;
+}
+
+.logo_drop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo_circle {
+  background-color: #ffffff0f;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.nav_notification {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff18;
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffffff2e;
+}
+
+.nav_authed_wallet {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff18;
+  min-width: 220px;
+  height: 40px;
+  border-radius: 8px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ffffff2e;
+}
+
+.nav_wallet_btn {
+  background-color: #B1BF24;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 0 12px;
+}
+
+.nav_wallet_btn p {
+  color: #fff;
+  font-weight: 600;
+  font-size: .85rem;
+}
+
+.nav_balance_box {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 8px;
+  padding-left: 12px;
+}
+
+.right_sect button {
+  background-color: #B1BF24;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: .85rem;
+  font-weight: 500;
 }

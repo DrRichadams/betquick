@@ -14,30 +14,78 @@ import { IoIosFootball } from "react-icons/io";
 import { FaGamepad } from "react-icons/fa";
 import { GoTrophy } from "react-icons/go";
 import Link from 'next/link';
+import { IoIosArrowDown } from "react-icons/io";
+import { IoNotifications } from "react-icons/io5";
 import { usePathname } from 'next/navigation';
+import { RiWallet3Fill } from "react-icons/ri";
+import gift_icon from "../../../public/pngs/btn_gift.png";
+import logo_no_letter from "../../../public/pngs/logo_no_letter.png";
+import gold_coin from "../../../public/pngs/gold_coin.png";
 
 const MainNav = () => {
     const pathname = usePathname();
+    const [ signedIn, set_signedIn ] = useState(false)
+    
   return (
     <div className='main_nav_container'>
         <div className='nav_top_menu'>
             <div className="left_side_content">
                 <Image src={logo} alt='logo' width={150} height={33.07} />
-                <div className='nav_left_contents_box'>
-                    BOB
-                </div>
+                {
+                    signedIn?
+                    <div className='nav_left_contents_box'>
+                        <button className='nav_btn_bonuses'>
+                            <Image src={gift_icon} alt='bonuses' style={{ width: "25px" }} />
+                            <p>Boneses</p>
+                        </button>
+                    </div>
+                    :""
+                }
             </div>
             <div className="right_side_content">
-                <div className="auth_btns_box">
-                    <button className='nav_btn_signup'>Sign up</button>
-                    <button className='nav_btn_login'>Log in</button>
-                </div>
+                {
+                    signedIn?
+                    <div className='nav_authed_wallet'>
+                        <div className="nav_balance_box">
+                            <Image src={gold_coin} alt='coin' style={{ width: '20px' }} />
+                            <p>$0</p>
+                        </div>
+                        <button className='nav_wallet_btn'>
+                            <RiWallet3Fill color='#fff' size={25} />
+                            <p>Wallet</p>
+                        </button>
+                    </div>
+                    :""
+                }
+
+                {
+                    !signedIn?<div className="auth_btns_box">
+                                <button className='nav_btn_signup'>Sign up</button>
+                                <button className='nav_btn_login'>Log in</button>
+                            </div>:
+                            <div className='authenticated_menu_options'>
+                                <Link href="/" className="logo_drop">
+                                    <div className="logo_circle">
+                                        <Image src={logo_no_letter} alt='logo' style={{ width: "25px" } } />
+                                    </div>
+                                    <IoIosArrowDown color='#fff' size={20} />
+                                </Link>
+                            </div>
+                }
+            
                 <div className="country_language_option_box">
                     <div className="flag_circle">
                         <Image src={uk_flag} alt='flag' width={80} height={50} style={{ width: "60px", height: "100%" }} />
                     </div>
                     <HiMiniCog6Tooth size={25} color='#d5d5d5' />
                 </div>
+                {
+                    signedIn?
+                    <div className='nav_notification'>
+                        <IoNotifications color='#d5d5d5' size={20} />
+                    </div>:
+                    ""
+                }
                 <div className="chat_btn">
                     <IoChatbubbleEllipses size={22} color='#d5d5d5' />
                 </div>
