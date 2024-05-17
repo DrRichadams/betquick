@@ -23,7 +23,9 @@ const MainNav = () => {
         <div className='nav_top_menu'>
             <div className="left_side_content">
                 <Image src={logo} alt='logo' width={150} height={33.07} />
-                <div className='nav_left_contents_box'></div>
+                <div className='nav_left_contents_box'>
+                    BOB
+                </div>
             </div>
             <div className="right_side_content">
                 <div className="auth_btns_box">
