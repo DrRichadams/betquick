@@ -46,3 +46,108 @@
     border-radius: 8px;
     padding: 6px 35px;
 }
+
+.actual_highlights_container {
+    margin-top: 30px;
+}
+
+.highlight_box {
+    background-color: var(--background_gray);
+    width: 45%;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.league_titles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.league_title_name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.league_title_name p{
+    color: var(--gray_color);
+    font-size: 1.3rem;
+}
+
+.league_top_icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.league_match_time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.league_match_time p {
+    color: #FFC000;
+    font-size: .95rem;
+    font-weight: 600;
+}
+
+.league_teams {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.league_teams div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.league_team p {
+    color: #fff;
+    font-size: .95rem;
+}
+
+.numsa {
+    color: #fff;
+}
+
+.league_btn_boxes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.league_main_btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 12px; */
+    gap: 6px;
+}
+
+.league_main_btns div{
+    display: flex;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.532);
+    color: #fff;
+    padding: 10px 48px;
+    border-radius: 8px;
+}
+
+.league_btn_arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(128, 128, 128, 0.532);
+    color: #fff;
+    /* padding: 10px 45px; */
+    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+}
