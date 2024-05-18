@@ -1,0 +1,48 @@
+.highlights_container {
+    margin: 50px 0;
+}
+
+.high_title {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.high_select_btns {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.high_select_btns button {
+    /* background-color: #B1BF24; */
+    color: #fff;
+    padding: 8px 30px;
+    border-radius: 8px;
+}
+
+.high_select_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.high_see_all {
+    color: #B1BF24;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.high_filter_menu {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.high_filter_menu button {
+    color: var(--gray_color);
+    border: 1px solid #ffffff21;
+    border-radius: 8px;
+    padding: 6px 35px;
+}
