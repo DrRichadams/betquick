@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --background_gray: #ffffff18;
+  --gray_color: #B3B3B3;
 }
 
 
@@ -29,6 +31,6 @@ body {
 
 .main_container {
   /* background-color: #141414; */
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 }
