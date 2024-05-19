@@ -49,11 +49,14 @@
 
 .actual_highlights_container {
     margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
 }
 
 .highlight_box {
     background-color: var(--background_gray);
-    width: 45%;
+    /* width: 45%; */
     padding: 15px;
     border-radius: 12px;
     display: flex;
@@ -115,6 +118,8 @@
 
 .numsa {
     color: #fff;
+    font-size: .85rem;
+    padding: 8px;
 }
 
 .league_btn_boxes {
@@ -150,4 +155,32 @@
     border-radius: 8px;
     width: 45px;
     height: 45px;
+}
+
+.highlight_middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.highlight_middle_left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.highlight_middle_right {
+    border: 2px solid #B1BF24;
+    border-radius: 18px;
+    padding: 10px;
+    background-color: #404040;
+    color: #fff;
+}
+
+.highlight_middle_right div {
+    padding: 6px;
+}
+
+.highlight_teamA {
+    border-bottom: 1px dotted gray;
 }

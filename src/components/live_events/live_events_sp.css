@@ -1,0 +1,79 @@
+.live_event_sp_comp_container {
+    background-color: var(--background_gray);
+    /* width: 45%; */
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.live_event_sp_box_titles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.live_event_sp_titles_left_title {
+    margin-right: 8px;
+}
+
+.live_event_sp_titles_left_title p {
+    color: var(--gray_color);
+    font-size: 1.3rem;
+}
+
+.live_event_sp_titles_left_timer {
+    color: var(--my-orange);
+    font-weight: 600;
+}
+
+.live_event_sp_titles_right {
+    color: var(--my-orange);
+    font-weight: 600;
+}
+
+
+.flex_center {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.live_event_sp_details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.live_event_details_value_box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.live_event_details_title {
+    color: var(--gray_color);
+    font-size: .8rem;
+}
+
+.green_circle_dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--my-green);
+    border-radius: 50%;
+}
+
+.live_event_details_value_box {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.live_event_join_btn {
+    background-color: var(--my-green);
+    padding: 12px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 600;
+}
