@@ -77,3 +77,29 @@
     color: #fff;
     font-weight: 600;
 }
+
+.live_event_sp_teams_box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.live_event_sp_details_box {
+    margin-bottom: 10px;
+}
+
+.live_event_sp_teamset {
+    display: flex;
+    align-items: center;
+    border-right: 1px dotted #fff;
+}
+
+.live_event_sp_team1,
+.live_event_sp_team2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    font-size: .75rem;
+}

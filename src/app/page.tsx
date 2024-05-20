@@ -6,10 +6,12 @@ import ResultsWinnings from "@/components/results_winnings/results_winnings";
 import { HiStatusOnline } from "react-icons/hi";
 import { TiArrowRight } from "react-icons/ti";
 import LiveEVentSurvivalPoolComp from "@/components/live_events/live_event_survival_pool_comp";
+import MainBanner from "@/components/banner/main_banner";
 
 export default function Home() {
   return (
     <main className="main_container">
+      <MainBanner />
       <div className="live_section_box">
         <div className="live_section_titles">
             <div className="live_titles_left">

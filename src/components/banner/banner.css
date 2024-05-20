@@ -1,0 +1,26 @@
+.main_banner_container {
+    position: relative;
+    min-height: 50vh;
+    margin-top: 50px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: red;
+    padding: 20px;
+}
+
+.banner_image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* height: 100%; */
+}
+
+
+.mb_titles,
+.mb_details,
+.mb_pagination {
+    position: relative;
+    z-index: 2;
+}

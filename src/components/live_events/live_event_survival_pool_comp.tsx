@@ -6,6 +6,8 @@ import Image from 'next/image';
 import footballIco from "../../../public/pngs/football.png";
 import timerIco from "../../../public/pngs/timer.png";
 import starIco from "../../../public/pngs/star.png";
+import munIco from "../../../public/pngs/manu.png";
+import cheIco from "../../../public/pngs/chelsea.png";
 
 const LiveEVentSurvivalPoolComp = () => {
   return (
@@ -26,7 +28,14 @@ const LiveEVentSurvivalPoolComp = () => {
             <Image src={starIco} alt='' style={{ width: "20px" }} />
           </div>
         </div>
-        <div className="live_event_sp_teams_box"></div>
+        <div className="live_event_sp_teams_box">
+          {/* PLACE TEAM SETS HERE */}
+          <LiveEventTeamSet />
+          <LiveEventTeamSet />
+          <LiveEventTeamSet />
+          <LiveEventTeamSet />
+          <LiveEventTeamSet />
+        </div>
         <div className="live_event_sp_details">
           <DetailsDisplay title='Markets' value='1X2, BOTH TEAMS TO SCORE' />
           <DetailsDisplay title='Entry fee' value='$100' />
@@ -50,6 +59,22 @@ const DetailsDisplay = ({ title, value }: displayDetailsType) => {
       <div className='live_event_details_value_box'>
         <div className="green_circle_dot"></div>
         <div className='live_event_details_value_box'>{value}</div>
+      </div>
+    </div>
+  )
+}
+
+const LiveEventTeamSet = () => {
+  return(
+    <div className="live_event_sp_teamset">
+      <div className="live_event_sp_team1">
+        <Image src={munIco} alt='team' style={{ width: "20px" }} />
+        <p>MUN</p>
+      </div>
+      <div style={{ fontSize: ".95rem", color: "#fff", padding: "0px 8px" }}>V</div>
+      <div className="live_event_sp_team2">
+        <Image src={cheIco} alt='team' style={{ width: "20px" }} />
+        <p>CHE</p>
       </div>
     </div>
   )
