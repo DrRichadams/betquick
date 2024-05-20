@@ -24,3 +24,24 @@
     position: relative;
     z-index: 2;
 }
+
+.mb_titles {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.mb_teams_box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+}
+
+.mb_time_box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+}
