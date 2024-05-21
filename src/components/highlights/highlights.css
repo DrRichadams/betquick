@@ -184,3 +184,29 @@
 .highlight_teamA {
     border-bottom: 1px dotted gray;
 }
+
+
+
+@media (max-width: 1222px) {
+    .league_main_btns div {
+        padding: 8px 30px;
+    }
+
+    .league_btn_arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 860px) {
+    .league_main_btns div {
+        padding: 6px 20px;
+    }
+}
+
+@media (max-width: 735px) {
+    .actual_highlights_container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}

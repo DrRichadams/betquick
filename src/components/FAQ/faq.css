@@ -28,3 +28,13 @@
     color: #fff;
     font-size: .85rem;
 }
+
+@media (max-width: 500px) {
+    .single_faq_box {
+        padding: 25px 12px;
+    }
+    
+    .question_box {
+        padding-right: 5px;
+    }
+}

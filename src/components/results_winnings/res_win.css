@@ -56,3 +56,42 @@
     align-items: center;
     gap: 8px;
 }
+
+.res_win_headers_cashout_title {
+    margin-left: auto;
+}
+
+
+
+@media (max-width: 890px) {
+    .res_win_headers {
+        padding: 10px 20px;
+    }
+
+    .res_win_box {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 720px) {
+    .to_be_removed {
+        display: none;
+    }
+
+    .res_win_headers {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .res_win_box {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cash_out_box {
+        margin-left: 0;
+        gap: 8px;
+    }
+
+    .res_win_headers_cashout_title {
+        margin-left: 0;
+    }
+}

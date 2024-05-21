@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
+import "./navigation.css";
 import Image from 'next/image';
 import logo from "../../../public/pngs/betquick_logo.png"
 import uk_flag from "../../../public/pngs/uk_flag.png"
@@ -21,10 +22,11 @@ import { RiWallet3Fill } from "react-icons/ri";
 import gift_icon from "../../../public/pngs/btn_gift.png";
 import logo_no_letter from "../../../public/pngs/logo_no_letter.png";
 import gold_coin from "../../../public/pngs/gold_coin.png";
+import { HiDotsHorizontal } from "react-icons/hi";
 
 const MainNav = () => {
     const pathname = usePathname();
-    const [ signedIn, set_signedIn ] = useState(false)
+    const [ signedIn, set_signedIn ] = useState(true)
     
   return (
     <div className='main_nav_container'>
@@ -35,7 +37,7 @@ const MainNav = () => {
                     signedIn?
                     <div className='nav_left_contents_box'>
                         <button className='nav_btn_bonuses'>
-                            <Image src={gift_icon} alt='bonuses' style={{ width: "25px" }} />
+                            <Image src={gift_icon} alt='bonuses' style={{ width: "22px" }} />
                             <p>Boneses</p>
                         </button>
                     </div>
@@ -107,6 +109,9 @@ const MainNav = () => {
             <div className="nav_bottom_menu_3 common_nav_bottom_box">
                 <Link href="/refer_earn" className='link_menu' style={{color: pathname.startsWith("/refer_earn")?"#B1BF24":"#fff" }}><p>Refer & Earn</p></Link>
                 <Link href="/copy_betting" className='link_menu' style={{color: pathname.startsWith("/copy_betting")?"#B1BF24":"#fff" }}><p>Copy Betting</p></Link>
+            </div>
+            <div className='main_nav_sub_menu'>
+                <HiDotsHorizontal size={20} />
             </div>
         </div>
     </div>

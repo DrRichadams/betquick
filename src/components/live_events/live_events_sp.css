@@ -26,6 +26,7 @@
 .live_event_sp_titles_left_timer {
     color: var(--my-orange);
     font-weight: 600;
+    font-size: 1rem;
 }
 
 .live_event_sp_titles_right {
@@ -102,4 +103,58 @@
     gap: 5px;
     color: #fff;
     font-size: .75rem;
+}
+
+@media(max-width: 520px){
+    .live_event_sp_team1,
+    .live_event_sp_team2 {
+        gap: 5px;
+        font-size: .65rem;
+    }
+}
+
+@media(max-width: 510px){
+    .live_event_details_value {
+        font-size: .85rem;
+    }
+}
+
+@media(max-width: 488px){
+    .live_event_sp_teams_box {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin: 15px 0;
+    }
+
+    .live_event_sp_titles_left_title p {
+        font-size: 1rem;
+    }
+
+    /* .live_event_sp_titles_left_timer {
+        font-size: .85rem;
+    } */
+}
+
+@media(max-width: 465px){
+    .live_event_details_value {
+        font-size: .75rem;
+    }
+
+    .live_event_sp_details {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media(max-width: 415px){
+    .live_event_sp_box_titles {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .live_event_sp_titles_right {
+        padding-left: 2px;
+    }
 }

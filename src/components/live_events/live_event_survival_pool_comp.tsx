@@ -8,6 +8,7 @@ import timerIco from "../../../public/pngs/timer.png";
 import starIco from "../../../public/pngs/star.png";
 import munIco from "../../../public/pngs/manu.png";
 import cheIco from "../../../public/pngs/chelsea.png";
+import { MdOutlineTimer } from "react-icons/md";
 
 const LiveEVentSurvivalPoolComp = () => {
   return (
@@ -19,7 +20,8 @@ const LiveEVentSurvivalPoolComp = () => {
               <p>Survival pools</p>
             </div>
             <div className="live_event_sp_titles_left_timer flex_center">
-              <Image src={timerIco} alt='' style={{ width: "15px" }} />
+              {/* <Image src={timerIco} alt='' style={{ width: "15px" }} /> */}
+              <MdOutlineTimer />
               <p>2/3</p>
             </div>
           </div>
@@ -58,7 +60,7 @@ const DetailsDisplay = ({ title, value }: displayDetailsType) => {
       <p className='live_event_details_title'>{title}</p>
       <div className='live_event_details_value_box'>
         <div className="green_circle_dot"></div>
-        <div className='live_event_details_value_box'>{value}</div>
+        <div className='live_event_details_value'>{value}</div>
       </div>
     </div>
   )

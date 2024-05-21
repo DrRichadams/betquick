@@ -25,9 +25,9 @@ const ResultsWinnings = () => {
             <div className="res_win_headers">
                 <p>Event</p>
                 <p>Stake</p>
-                <p>Rank</p>
-                <p>Time</p>
-                <p style={{ marginLeft: "auto" }}>Cashout</p>
+                <p className='to_be_removed'>Rank</p>
+                <p className='to_be_removed'>Time</p>
+                <p className='res_win_headers_cashout_title'>Cashout</p>
             </div>
             {
                 res_win.map((item) => {
@@ -43,8 +43,8 @@ const ResultsWinnings = () => {
                                 <p>{item.event}</p>
                             </div>
                             <p>${item.stake}</p>
-                            <p>{item.rank}</p>
-                            <p>{item.time}</p>
+                            <p className='to_be_removed'>{item.rank}</p>
+                            <p className='to_be_removed'>{item.time}</p>
                             <div className="cash_out_box">
                                 <Image 
                                     src={item.cashout_type=="T"

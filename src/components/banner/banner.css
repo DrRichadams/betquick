@@ -1,29 +1,35 @@
+
 .main_banner_container {
-    position: relative;
-    min-height: 50vh;
-    margin-top: 50px;
-    border-radius: 12px;
-    overflow: hidden;
     background-color: red;
-    padding: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
 }
 
 .banner_image {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    position: relative;
+}
+
+.main_banner_inner_details {
     position: absolute;
+    z-index: 10;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
-    /* height: 100%; */
+    width: 100%;
+    /* background-color: red; */
+    padding: 20px;
 }
 
 
-.mb_titles,
+/* .mb_titles,
 .mb_details,
 .mb_pagination {
     position: relative;
     z-index: 2;
-}
+} */
 
 .mb_titles {
     display: flex;
@@ -44,4 +50,103 @@
     align-items: center;
     gap: 6px;
     color: #fff;
+    background-color: #ffffff19;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.mb_team_box {
+    background-color: #ffffff19;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.mb_details {
+    /* background-color: #ffffff1e; */
+    background: linear-gradient(
+        to right bottom, 
+        rgba(255, 255, 255, 0), 
+        rgba(255, 255, 255, 0));
+    backdrop-filter: blur(.2rem);
+    padding: 20px 12px;
+    /* max-width: 45%; */
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 18px;
+    border: 1px solid #ffffff28;
+}
+
+.mb_details h3 {
+    color: rgb(58, 58, 58);
+    font-size: 1.2rem;
+}
+
+.mb_details h1 {
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 500;
+}
+
+.mb_details p {
+    color: #ffffffd4;
+    /* color: var(--my-green); */
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+.mb_btn_cta {
+    background-color: var(--my-green);
+    padding: 12px;
+    border-radius: 8px;
+    color: #fff;
+    width: 170px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.mb_team_box_image {
+    width: 40px;
+}
+
+
+
+
+@media(max-width: 635px){
+    .main_banner_inner_details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mb_details {
+        padding: 20px 12px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .banner_image {
+        height: 68vh;
+    }
+
+    .mb_team_box_image {
+        width: 40px;
+    }
+}
+
+
+@media(max-width: 430px){
+    .mb_team_box_image {
+        width: 30px;
+    }
+
+    .mb_time_box {
+        gap: 4px;
+        padding: 8px;
+        font-size: .85rem;
+    }
 }
