@@ -68,3 +68,22 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
+
+
+@media (max-width: 1388px) {
+  body {
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 1130px) {
+  body {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 1020px) {
+  body {
+    padding: 0 20px;
+  }
+}

@@ -53,6 +53,9 @@
     background-color: rgba(0, 0, 0, 0.873);
     color: #B3B3B3;
     position: relative;
+
+    width: 100%;
+    min-height: 200px;
 }
 
 .left_sect p span {
@@ -64,4 +67,28 @@
     font-size: .85rem;
     margin-bottom: 15px;
     padding-left: 8px;
+}
+
+
+@media (max-width: 830px) {
+    .watermark {
+        font-size: 2.5rem;
+    }
+    
+    .feedback_text_box {
+        padding: 12px;
+        width: 100%;
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 710px) {
+    .feedback_container {
+        margin-bottom: 40px;
+        min-height: 45vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 25px;
+        gap: 45px;
+    }
 }

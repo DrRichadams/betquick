@@ -17,7 +17,8 @@ function FeedbackComp() {
             <div className="feedback_text_area">
                 <div className="textbox_container">
                     <h3 className="watermark">Betquick</h3>
-                    <textarea className='feedback_text_box' maxLength={1500} name="" rows={6} cols={50} placeholder='Go ahead and tell us .......' />
+                    {/* <textarea className='feedback_text_box' maxLength={1500} name="" rows={6} cols={50} placeholder='Go ahead and tell us .......' /> */}
+                    <textarea className='feedback_text_box' maxLength={1500} placeholder='Go ahead and tell us .......' />
                 </div>
                 <p className="feedback_warning">0-1500 characters</p>
             </div>

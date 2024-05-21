@@ -21,9 +21,9 @@ const MainBanner = () => {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
         slidesPerView={1}
-        navigation
+        // navigation
         pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
+        // scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
     >
@@ -31,7 +31,6 @@ const MainBanner = () => {
       <SwiperSlide><SwiperElement /></SwiperSlide>
       <SwiperSlide><SwiperElement /></SwiperSlide>
       <SwiperSlide><SwiperElement /></SwiperSlide>
-      ...
     </Swiper>
   )
 }
