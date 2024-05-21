@@ -33,7 +33,15 @@ const Highlights = () => {
             </button>
         </div>
         <div className="high_filter_menu">
-            { selected_highlight == "football" ? leages.map((item) => (<button style={{ backgroundColor: item.id==selected_league? "#1F1F1F":"transparent" }} onClick={() => changeLeague(item.id)}>{item.title}</button>)): null }
+            { 
+                selected_highlight == "football" 
+                ? leages.map((item) => (
+                    <button 
+                        style={{ backgroundColor: item.id==selected_league? "#1F1F1F":"transparent" }} 
+                        onClick={() => changeLeague(item.id)}>{item.title}
+                    </button>))
+                : null 
+            }
         </div>
         <div className="actual_highlights_container">
             <HighlightComp isActive={false} />

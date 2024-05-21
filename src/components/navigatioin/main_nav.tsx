@@ -22,6 +22,7 @@ import { RiWallet3Fill } from "react-icons/ri";
 import gift_icon from "../../../public/pngs/btn_gift.png";
 import logo_no_letter from "../../../public/pngs/logo_no_letter.png";
 import gold_coin from "../../../public/pngs/gold_coin.png";
+import mob_menu_icon from "../../../public/pngs/menu_ico.png";
 import { HiDotsHorizontal } from "react-icons/hi";
 
 const MainNav = () => {
@@ -32,10 +33,10 @@ const MainNav = () => {
     <div className='main_nav_container'>
         <div className='nav_top_menu'>
             <div className="left_side_content">
-                <Image src={logo} alt='logo' width={150} height={33.07} />
+                <Image src={logo} alt='logo' className='main_nav_logo' />
                 {
                     signedIn?
-                    <div className='nav_left_contents_box'>
+                    <div className='nav_left_contents_box none_menu_sections'>
                         <button className='nav_btn_bonuses'>
                             <Image src={gift_icon} alt='bonuses' style={{ width: "22px" }} />
                             <p>Boneses</p>
@@ -47,12 +48,12 @@ const MainNav = () => {
             <div className="right_side_content">
                 {
                     signedIn?
-                    <div className='nav_authed_wallet'>
+                    <div className='nav_authed_wallet none_menu_sections'>
                         <div className="nav_balance_box">
                             <Image src={gold_coin} alt='coin' style={{ width: '20px' }} />
                             <p>$0</p>
                         </div>
-                        <button className='nav_wallet_btn'>
+                        <button className='nav_wallet_btn none_menu_sections'>
                             <RiWallet3Fill color='#fff' size={25} />
                             <p>Wallet</p>
                         </button>
@@ -61,11 +62,11 @@ const MainNav = () => {
                 }
 
                 {
-                    !signedIn?<div className="auth_btns_box">
+                    !signedIn?<div className="auth_btns_box none_menu_sections">
                                 <button className='nav_btn_signup'>Sign up</button>
                                 <button className='nav_btn_login'>Log in</button>
                             </div>:
-                            <div className='authenticated_menu_options'>
+                            <div className='authenticated_menu_options none_menu_sections'>
                                 <Link href="/" className="logo_drop">
                                     <div className="logo_circle">
                                         <Image src={logo_no_letter} alt='logo' style={{ width: "25px" } } />
@@ -75,7 +76,7 @@ const MainNav = () => {
                             </div>
                 }
             
-                <div className="country_language_option_box">
+                <div className="country_language_option_box none_menu_sections">
                     <div className="flag_circle">
                         <Image src={uk_flag} alt='flag' width={80} height={50} style={{ width: "60px", height: "100%" }} />
                     </div>
@@ -88,13 +89,16 @@ const MainNav = () => {
                     </div>:
                     ""
                 }
-                <div className="chat_btn">
+                <div className="chat_btn none_menu_sections">
                     <IoChatbubbleEllipses size={22} color='#d5d5d5' />
                 </div>
+                <button className="main_nav_mobile_menu_btn">
+                    <Image src={mob_menu_icon} alt='menu' style={{ width: "24px" }} />
+                </button>
             </div>
         </div>
 
-        <div className="nav_bottom_menu">
+        <div className="nav_bottom_menu none_menu_sections">
             <div className="nav_bottom_menu_1 common_nav_bottom_box">
                 <Link href="/" className='link_menu' style={{color: pathname=="/"?"#B1BF24":"#fff" }}><ImHome /></Link>
                 <Link href="/live" className='link_menu' style={{color: pathname.startsWith("/live")?"#B1BF24":"#fff" }}><HiStatusOnline /></Link>

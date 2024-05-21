@@ -1,9 +1,10 @@
 
 .main_banner_container {
-    background-color: red;
+    /* background-color: red; */
     border-radius: 20px;
     overflow: hidden;
     position: relative;
+    margin-top: 30px;
 }
 
 .banner_image {
