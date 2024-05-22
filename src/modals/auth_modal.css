@@ -1,0 +1,134 @@
+.auth_inner_container {
+    background-color: #1F1F1F;
+    width: 400px;
+    /* height: 380px; */
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .auth_selector {
+    background-color: #333333;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    gap: 12px;
+  }
+  
+  .auth_selector button {
+    background-color: red;
+    color: #fff;
+    width: 50%;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+.auth_input_container {
+    background-color: #66666642;
+    border: 2px solid #ffffff20;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+}
+
+.auth_input_container input {
+    padding: 8px;
+    font-size: .85rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: gray;
+}
+
+.auth_form_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.auth_forgotP_btn {
+    /* background-color: red; */
+    color: #fff;
+    font-size: .85rem;
+    align-self: flex-start;
+    margin-left: 12px;
+}
+
+.auth_login_btn {
+    background-color: var(--my-green);
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    margin: 15px 0 10px 0;
+}
+
+.auth_login_message {
+    color: gray;
+    font-size: .85rem;
+    text-align: center;
+}
+
+.auth_login_message span {
+    color: var(--my-green);
+}
+
+.auth_select_input {
+    padding: 8px;
+    font-size: .85rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: gray;
+}
+
+.auth_terms_of_service {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.auth_terms_of_service p {
+    color: gray;
+    font-size: .85rem;
+    line-height: 19px;
+}
+
+.auth_terms_of_service p span {
+    color: var(--my-green);
+}
+
+.auth_tc_checkbox {
+    /* background-color: red; */
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 4px;
+    border: 2px solid var(--my-green);
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth_tc_checkbox div {
+    /* background-color: red; */
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.auth_signup_btn {
+    background-color: var(--my-green);
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 12px;
+}
