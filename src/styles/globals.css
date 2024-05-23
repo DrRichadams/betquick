@@ -88,6 +88,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth_modal_close_btn {
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  border-radius: 50%;
 }
 
 

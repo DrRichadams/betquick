@@ -29,8 +29,11 @@ const AuthModal = () => {
 
 
 const LoginForm = () => {
+  const submitLogin = (e: any) => {
+    e.preventDefault()
+  }
     return(
-      <form className="auth_form_login">
+      <form className="auth_form_login" onSubmit={(e) => submitLogin(e)}>
         <div className="auth_form_inputs">
           <div className="auth_input_container">
             <TbPhoneFilled color="gray" size={20} />
@@ -52,8 +55,11 @@ const LoginForm = () => {
 
   const SigninForm = () => {
     const [signup_terms, set_signup_terms] = useState(false);
+    const submitSignup = (e: any) => {
+      e.preventDefault()
+    }
     return(
-        <div className="auth_form_signin">
+        <form className="auth_form_signin" onSubmit={(e) => submitSignup(e)}>
              <div className="auth_form_inputs">
                 <div className="auth_input_container">
                     <TbPhoneFilled color="gray" size={20} />
@@ -86,7 +92,7 @@ const LoginForm = () => {
                 </div>
             </div>
             <button className="auth_signup_btn">Create account</button>
-        </div>
+        </form>
     )
   }
 

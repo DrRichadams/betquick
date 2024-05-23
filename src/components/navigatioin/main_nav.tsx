@@ -24,13 +24,23 @@ import logo_no_letter from "../../../public/pngs/logo_no_letter.png";
 import gold_coin from "../../../public/pngs/gold_coin.png";
 import mob_menu_icon from "../../../public/pngs/menu_ico.png";
 import { HiDotsHorizontal } from "react-icons/hi";
+import AuthModal from '@/modals/auth_modal';
+import { useGlobalContext } from '@/context/store';
 
 const MainNav = () => {
     const pathname = usePathname();
-    const [ signedIn, set_signedIn ] = useState(true)
+    const [ signedIn, set_signedIn ] = useState(false)
+    const { isAuthModal, setIsAuthModal } = useGlobalContext();
     
   return (
     <div className='main_nav_container'>
+        {
+            isAuthModal ?
+            <div className="auth_modal">
+                <button className="auth_modal_close_btn" onClick={() => setIsAuthModal(false)}></button>
+                <AuthModal />
+            </div>:null
+        }
         <div className='nav_top_menu'>
             <div className="left_side_content">
                 <Image src={logo} alt='logo' className='main_nav_logo' />
@@ -64,7 +74,7 @@ const MainNav = () => {
                 {
                     !signedIn?<div className="auth_btns_box none_menu_sections">
                                 <button className='nav_btn_signup'>Sign up</button>
-                                <button className='nav_btn_login'>Log in</button>
+                                <button className='nav_btn_login' onClick={() => setIsAuthModal(true)}>Log in</button>
                             </div>:
                             <div className='authenticated_menu_options none_menu_sections'>
                                 <Link href="/" className="logo_drop">
