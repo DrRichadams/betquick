@@ -37,6 +37,7 @@ const Highlights = () => {
                 selected_highlight == "football" 
                 ? leages.map((item) => (
                     <button 
+                        key={item.id}
                         style={{ backgroundColor: item.id==selected_league? "#1F1F1F":"transparent" }} 
                         onClick={() => changeLeague(item.id)}>{item.title}
                     </button>))

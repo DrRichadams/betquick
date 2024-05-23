@@ -32,7 +32,7 @@ const ResultsWinnings = () => {
             {
                 res_win.map((item) => {
                     return(
-                        <div className='res_win_box'>
+                        <div className='res_win_box' key={item.id}>
                             <div className="res_win_event">
                                 <Image 
                                     src={item.event=="Football"
