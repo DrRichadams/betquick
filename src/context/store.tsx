@@ -2,10 +2,6 @@
 
 import { createContext, useContext, Dispatch, SetStateAction, useState } from "react";
 
-type DataType = {
-    name: string
-}
-
 interface ContextProps {
     isAuthModal: boolean,
     setIsAuthModal: Dispatch<SetStateAction<boolean>>,
