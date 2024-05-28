@@ -104,7 +104,7 @@ const MainNav = () => {
                 <div className="chat_btn none_menu_sections">
                     <IoChatbubbleEllipses size={22} color='#d5d5d5' />
                 </div>
-                <UserButton />
+                {/* <UserButton /> */}
                 <button className="main_nav_mobile_menu_btn">
                     <Image src={mob_menu_icon} alt='menu' style={{ width: "24px" }} />
                 </button>

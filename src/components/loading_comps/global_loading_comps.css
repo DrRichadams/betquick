@@ -6,15 +6,24 @@
     min-width: 300px;
     min-height: 200px;
     max-width: 450px;
-    max-height: 250px;
+    max-height: 300px;
     border-radius: 12px;
-    /* margin: 0 auto; */
+    margin: 0 auto;
+    padding: 8px;
 }
 
 .fav_loading_circles {
     position: absolute;
+    z-index: 20;
     top: -20px;
     right: -20px;
+}
+
+@media (max-width: 530px) {
+    .fav_loading_circles {
+        top: -10px;
+        right: -10px;
+    }
 }
 
 .fav_circles {
@@ -50,4 +59,70 @@
     max-width: 450px;
     max-height: 250px;
     border-radius: 12px; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fav_load_box_btns {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 1fr;
+    gap: 6px;
+}
+
+.fav_load_box_btn {
+    background-color: #404040;
+    height: 40px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.fav_load_box_btn_small {
+    background-color: #404040;
+    height: 40px;
+    width: 10 0%;
+    border-radius: 8px;
+}
+
+.fav_load_inner_rect {
+    max-width: 250px;
+    width: 100%;
+    height: 20px;
+    background-color: #404040;
+    margin-bottom: 5px;
+    border-radius: 20px;
+}
+
+.fav_load_box_tiny1 {
+    background-color: #404040;
+    max-width: 80px;
+    width: 100%;
+    height: 20px;
+    border-radius: 20px;
+}
+
+.user_typa_box {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.user_typa_box_circle {
+    background-color: #404040;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.user_typa_box_rect {
+    background-color: #404040;
+    width: 100px;
+    height: 20px;
+    border-radius: 20px;
 }
