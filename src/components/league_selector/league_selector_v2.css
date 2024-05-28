@@ -1,0 +1,26 @@
+
+.league_selector_v2_container {
+    padding: 10px 0;
+}
+
+.selector_btn_inner {
+    /* background-color: red; */
+    width: 100%;
+    /* color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: .85rem; */
+    /* border: 1px solid #ffffff21; */
+}
+
+.selector_slide {
+    /* background-color: red; */
+    /* width: 20px; */
+    /* padding-bottom: 8px; */
+    border: 1px solid #ffffff21;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: .85rem;
+    margin-bottom: 6px;
+}

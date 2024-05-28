@@ -27,19 +27,19 @@
 }
 
 .high_filter_menu {
-    /* display: flex; */
-    /* gap: 12px; */
-    /* margin-top: 20px; */
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
     /* background-color: red; */
-    /* overflow: scroll; */
-    /* padding: 12px 0; */
+    overflow: scroll;
+    padding: 12px 0;
 }
 
 .high_filter_menu button {
     color: var(--gray_color);
     border: 1px solid #ffffff21;
     border-radius: 8px;
-    /* padding: 6px 35px; */
+    padding: 6px 35px;
 }
 
 @media (max-width: 1270px) {

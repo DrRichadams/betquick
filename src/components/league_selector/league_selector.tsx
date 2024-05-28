@@ -4,14 +4,6 @@ import React, { useState } from 'react'
 import "./league_selector.css";
 import { TiArrowRight } from "react-icons/ti";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-
-
 type Props = {
     show_all: boolean
 }
@@ -45,7 +37,7 @@ const LeagueSelector = ({ show_all }: Props) => {
                 </button> : null
             }
         </div>
-        {/* <div className="high_filter_menu">
+        <div className="high_filter_menu">
             { 
                 selected_highlight == "football" 
                 ? leages.map((item) => (
@@ -56,32 +48,7 @@ const LeagueSelector = ({ show_all }: Props) => {
                     </button>))
                 : null 
             }
-        </div> */}
-        <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={50}
-            slidesPerView={5}
-            // navigation
-            pagination={{ clickable: true }}
-            // scrollbar={{ draggable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
-            className="high_filter_menu"
-        >
-            { 
-                selected_highlight == "football" 
-                ? leages.map((item) => (
-                    <SwiperSlide>
-                        <button 
-                            key={item.id}
-                            style={{ backgroundColor: item.id==selected_league? "#1F1F1F":"transparent" }} 
-                            onClick={() => changeLeague(item.id)}>{item.title}
-                        </button>
-                    </SwiperSlide>
-                    ))
-                : null 
-            }
-        </Swiper>
+        </div>
     </div>
   )
 }
