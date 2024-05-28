@@ -143,21 +143,38 @@
     font-size: .85rem;
     padding: 8px;
 }
-
+/* 
 .league_btn_boxes {
     display: flex;
     align-items: center;
     justify-content: space-between;
+} */
+
+.league_btn_boxes {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 1fr;
+    gap: 6px;
 }
 
-.league_main_btns {
+/* .league_main_btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+} */
+
+.league_btn_boxes div {
     display: flex;
     align-items: center;
     justify-content: center;
     /* margin-top: 12px; */
     gap: 6px;
+    background-color: rgba(128, 128, 128, 0.532);
+    color: #fff;
+    /* padding: 10px 48px; */
+    border-radius: 8px;
 }
-
+/* 
 .league_main_btns div{
     display: flex;
     align-items: center;
@@ -165,7 +182,7 @@
     color: #fff;
     padding: 10px 48px;
     border-radius: 8px;
-}
+} */
 
 .league_btn_arrow {
     display: flex;

@@ -69,3 +69,16 @@
     border-radius: 8px;
     margin-top: 15px;
 }
+
+.favs_box p {
+    color: var(--gray_color);
+    font-size: .85rem;
+    font-weight: 300;
+}
+
+.fav_listing_box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}

@@ -55,11 +55,14 @@ export const HighlightComp = ({ isActive }: highlightProps) => {
                 }
             </div>
             <div className="league_btn_boxes">
-                <div className="league_main_btns">
+                {/* <div className="league_main_btns">
                     <div><p>1</p><p>0.7</p></div>
                     <div><p>Draw</p><p>0.7</p></div>
                     <div><p>2</p><p>0.7</p></div>
-                </div>
+                </div> */}
+                <div className="league_btn_bet"><p>1</p><p>0.7</p></div>
+                <div className="league_btn_bet"><p>Draw</p><p>0.7</p></div>
+                <div className="league_btn_bet"><p>2</p><p>0.7</p></div>
                 <div className="league_btn_arrow">
                     <Image src={arrow_down} alt='arrow' style={{ width: "22px" }} />
                 </div>
