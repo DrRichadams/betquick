@@ -26,6 +26,7 @@ import mob_menu_icon from "../../../public/pngs/menu_ico.png";
 import { HiDotsHorizontal } from "react-icons/hi";
 import AuthModal from '@/modals/auth_modal';
 import { useGlobalContext } from '@/context/store';
+import { UserButton } from '@clerk/nextjs';
 
 const MainNav = () => {
     const pathname = usePathname();
@@ -43,7 +44,7 @@ const MainNav = () => {
         }
         <div className='nav_top_menu'>
             <div className="left_side_content">
-                <Image src={logo} alt='logo' className='main_nav_logo' />
+                <Link href="/"><Image src={logo} alt='logo' className='main_nav_logo' /></Link>
                 {
                     signedIn?
                     <div className='nav_left_contents_box none_menu_sections'>
@@ -73,8 +74,9 @@ const MainNav = () => {
 
                 {
                     !signedIn?<div className="auth_btns_box none_menu_sections">
-                                <button className='nav_btn_signup'>Sign up</button>
-                                <button className='nav_btn_login' onClick={() => setIsAuthModal(true)}>Log in</button>
+                                <Link href="/sign-up" className='nav_btn_signup auth_btns_box_buttons'>Sign up</Link>
+                                <Link href="/sign-in" className='nav_btn_login auth_btns_box_buttons'>Log in</Link>
+                                {/* <button className='nav_btn_login' onClick={() => setIsAuthModal(true)}>Log in</button> */}
                             </div>:
                             <div className='authenticated_menu_options none_menu_sections'>
                                 <Link href="/" className="logo_drop">
@@ -102,6 +104,7 @@ const MainNav = () => {
                 <div className="chat_btn none_menu_sections">
                     <IoChatbubbleEllipses size={22} color='#d5d5d5' />
                 </div>
+                <UserButton />
                 <button className="main_nav_mobile_menu_btn">
                     <Image src={mob_menu_icon} alt='menu' style={{ width: "24px" }} />
                 </button>

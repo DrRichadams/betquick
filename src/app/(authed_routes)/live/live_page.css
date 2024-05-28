@@ -1,0 +1,23 @@
+.live_page_container {
+    margin: 25px 0;
+}
+
+.lives_highlights {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.live_bottom_story {
+    color: var(--gray_color);
+    padding: 20px 5px;
+    font-size: .9rem;
+}
+
+
+@media (max-width: 750px) {
+    .lives_highlights {
+        grid-template-columns: 1fr;
+    }
+}
