@@ -1,0 +1,22 @@
+.game_section_container {
+    margin: 20px 0;
+}
+
+.game_section_title_box {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 1.3rem;
+}
+
+.game_section_title_box p{
+    color: #fff;
+}
+
+.game_section_game_listing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}

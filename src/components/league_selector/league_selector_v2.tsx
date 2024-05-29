@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import "./league_selector_v2.css";
 

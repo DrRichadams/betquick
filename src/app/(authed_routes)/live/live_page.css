@@ -21,3 +21,30 @@
         grid-template-columns: 1fr;
     }
 }
+
+
+.live_options {
+    background-color: #1F1F1F;
+    max-width: 300px;
+    padding: 4px;
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.live_options button {
+    color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    width: 50%;
+    font-weight: 500;
+}
+
+.green_select_btn {
+    background-color: var(--my-green);
+}
+
+.transparent_select_btn {
+    background-color: transparent;
+}

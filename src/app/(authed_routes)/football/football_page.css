@@ -1,0 +1,21 @@
+.football_page_container {
+    padding: 20px 0;
+}
+
+.football_pTitles {
+    color: var(--my-green);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.6rem;
+}
+
+.football_pTitles p {
+    color: #fff;
+}
+
+.football_page_footer {
+    padding: 20px 10px;
+    color: var(--gray_color);
+    font-size: .85rem;
+}

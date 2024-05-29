@@ -1,0 +1,21 @@
+.survival_pool_page_container {
+    padding: 20px 0;
+}
+
+.survival_pool_pTitles {
+    color: var(--my-green);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.6rem;
+}
+
+.survival_pool_pTitles p {
+    color: #fff;
+}
+
+.survival_pool_page_footer {
+    padding: 20px 10px;
+    color: var(--gray_color);
+    font-size: .85rem;
+}
