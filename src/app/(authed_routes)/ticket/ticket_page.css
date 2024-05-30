@@ -1,0 +1,55 @@
+
+
+.ticket_page_title_box {
+    color: var(--my-green);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.ticket_page_title_box p {
+    color: #fff;
+}
+
+.ticket_page_options {
+    background-color: #1F1F1F;
+    max-width: 300px;
+    padding: 4px;
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.ticket_page_options button {
+    color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    width: 50%;
+    font-weight: 500;
+}
+
+.green_select_btn {
+    background-color: var(--my-green);
+}
+
+.transparent_select_btn {
+    background-color: transparent;
+}
+
+.ticket_page_bet_options_box {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.ticket_page_bet_options_box button{
+    padding: 8px 20px;
+    color: #fff;
+    font-size: .85rem;
+    text-transform: capitalize;
+    border-radius: 12px;
+}
