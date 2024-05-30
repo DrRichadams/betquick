@@ -1,0 +1,19 @@
+
+.award_finance_page_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.coming_soon_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.award_finance_script {
+    color: var(--gray_color);
+    font-size: .85rem;
+    padding: 20px;
+}
