@@ -5,6 +5,9 @@ import "./ticket_page.css";
 import Link from 'next/link';
 import { TbTicket } from "react-icons/tb";
 import TicketEmptyLoading from '@/components/loading_comps/ticket_empty_loading';
+import { IoIosFootball } from "react-icons/io";
+import { LuTimer } from "react-icons/lu";
+import { VscJersey } from "react-icons/vsc";
 
 function TicketPage() {
   const [ game_option, set_game_option ] = useState("football");
@@ -85,7 +88,46 @@ const BetBox = ({ bet_type, children }: BetBoxProps) => {
 const BettingTeams = () => {
   return(
     <div className="betting_teams_container">
-
+      <div className="betting_teams_accent"></div>
+      <div className="betting_teams_upper_box">
+        <div className="betting_teams_upper_title_box">
+          <div className="betting_teams_home_team_title">
+            <IoIosFootball />
+            <p>Home ( Manchester United )</p>
+          </div>
+          <div className="betting_teams_home_match_details">
+            <div className="betting_teams_home_timer">
+              <LuTimer />
+              <p>FT</p>
+            </div>
+            <div className="betting_teams_home_scoring">
+              <p>0</p>
+              <div></div>
+              <p>0</p>
+            </div>
+          </div>
+        </div>
+        <div className="betting_teams_upper_playing_teams_box">
+          <div className="betting_teams_upper_team_box">
+            <VscJersey />
+            <p>Machester United</p>
+          </div>
+          <div className="betting_teams_upper_versus">V</div>
+          <div className="betting_teams_upper_team_box">
+            <VscJersey />
+            <p>Chelsea FC</p>
+          </div>
+        </div>
+        <div className="betting_teams_upper_stats_box">
+          <div className="betting_teams_upper_market_box">1X2</div>
+          <div className="betting_teams_upper_odds_box">3.19</div>
+        </div>
+      </div>
+      <div className="betting_teams_lower_box">
+        <div className="betting_teams_lower_box">Pick: <span>Home @2.19</span></div>
+        <div className="betting_teams_lower_box">Market: <span>1X2</span></div>
+        <div className="betting_teams_lower_box">Outcome: <span>Home</span></div>
+      </div>
     </div>
   )
 }
