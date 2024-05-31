@@ -56,7 +56,9 @@ function TicketPage() {
       }
       <div className="ticket_bet_container">
         <BetBox bet_type='Multiple'>
-          <div>HELLO</div>
+          <div className="ticket_bet_inner_box">
+            <BettingTeams />
+          </div>
         </BetBox>
       </div>
     </div>
@@ -76,6 +78,14 @@ const BetBox = ({ bet_type, children }: BetBoxProps) => {
         <p>Betslip ({ bet_type })</p>
       </div>
       { children }
+    </div>
+  )
+}
+
+const BettingTeams = () => {
+  return(
+    <div className="betting_teams_container">
+
     </div>
   )
 }
