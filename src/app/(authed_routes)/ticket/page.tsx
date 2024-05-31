@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import "./ticket_page.css";
+import Link from 'next/link';
 import { TbTicket } from "react-icons/tb";
 import TicketEmptyLoading from '@/components/loading_comps/ticket_empty_loading';
 
@@ -10,6 +11,8 @@ function TicketPage() {
   const [ bet_options ] = useState([ { id: 1, name: "all" }, { id: 2, name: "open bets" }, { id: 3, name: "won" }, { id: 4, name: "lost" }, { id: 5, name: "cashed out" }, { id: 6, name: "refund" } ])
   const [ selected_bet, set_selected_bet ] = useState(1);
   const [ isEmpty ] = useState(false)
+  const [ no_tickets, set_no_tickets ] = useState(false)
+
   const changeOption = (option: string) => {
     set_game_option(option)
   }
@@ -40,14 +43,39 @@ function TicketPage() {
           </button>
         ))
       }</div>
-      <div className="empty_ticket_render">
-        <TicketEmptyLoading />
-        <p>
-          Betting options are not available.
-          Consider choosing other dates.
-        </p>
-        <button>Go To Homepage</button>
+      {
+        no_tickets ?
+          <div className="empty_ticket_render">
+          <TicketEmptyLoading />
+          <p>
+            Betting options are not available.
+            Consider choosing other dates.
+          </p>
+          <Link href="/" className='empty_ticket_btn'>Go To Homepage</Link>
+        </div>: null
+      }
+      <div className="ticket_bet_container">
+        <BetBox bet_type='Multiple'>
+          <div>HELLO</div>
+        </BetBox>
       </div>
+    </div>
+  )
+}
+
+type BetBoxProps = {
+  bet_type: string,
+  children: ReactNode
+}
+
+const BetBox = ({ bet_type, children }: BetBoxProps) => {
+  return(
+    <div className="bet_box_container">
+      <div className="bet_box_title_box">
+        <TbTicket size={25} />
+        <p>Betslip ({ bet_type })</p>
+      </div>
+      { children }
     </div>
   )
 }

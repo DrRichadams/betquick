@@ -1,5 +1,9 @@
 
 
+.ticket_page_container {
+    margin-bottom: 30px;
+}
+
 .ticket_page_title_box {
     color: var(--my-green);
     display: flex;
@@ -69,11 +73,40 @@
     text-align: center;
 }
 
-.empty_ticket_render button {
+.empty_ticket_btn {
     background-color: var(--my-green);
     padding: 8px 12px;
     border-radius: 8px;
     color: #fff;
     font-weight: 500;
     font-size: .85rem;
+}
+
+.ticket_bet_container {
+    max-width: 450px;
+    min-height: 300px;
+    background-color: #1F1F1F;
+    position: relative;
+    border-radius: 20px;
+    padding-top: 55px;
+    overflow: hidden;
+}
+
+.bet_box_title_box {
+    color: #fff;
+    background-color: var(--my-green);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 12px;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bet_box_title_box p{
+    color: #fff;
+    font-weight: 600;
 }
