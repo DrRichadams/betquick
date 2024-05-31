@@ -126,3 +126,84 @@
     height: 20px;
     border-radius: 20px;
 }
+
+
+
+
+/* STYLING THE EMPTY TICKET COMPONENT */
+
+.empty_ticket_loading_container {
+    margin: 20px 0 0px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* background-color: red; */
+    align-items: center;
+}
+
+.empty_ticket_box {
+    position: relative;
+    background-color: #333333;
+    max-width: 430px;
+    min-height: 90px;
+    width: 100vw;
+    border-radius: 8px;
+    padding: 12px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.empty_ticket_accent {
+    width: 10px;
+    height: 70%;
+    background-color: var(--my-green);
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 20px;
+}
+
+.empty_ticket_right_box {
+    /* background-color: red; */
+    max-height: 65px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.empty_ticket_right_box div {
+    width: 20px;
+    height: 15px;
+    background-color: #404040;
+    border-radius: 20px;
+}
+
+.empty_ticket_left_box {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.empty_ticket_common {
+    background-color: #404040;
+    height: 15px;
+    width: 100vw;
+    border-radius: 20px;
+}
+
+.empty_ticket_one {
+    max-width: 200px;
+}
+
+.empty_ticket_two {
+    max-width: 185px;
+}
+
+.empty_ticket_three {
+    max-width: 30px;
+}

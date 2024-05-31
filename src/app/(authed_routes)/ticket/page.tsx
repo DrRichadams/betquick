@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import "./ticket_page.css";
 import { TbTicket } from "react-icons/tb";
+import TicketEmptyLoading from '@/components/loading_comps/ticket_empty_loading';
 
 function TicketPage() {
   const [ game_option, set_game_option ] = useState("football");
@@ -39,6 +40,14 @@ function TicketPage() {
           </button>
         ))
       }</div>
+      <div className="empty_ticket_render">
+        <TicketEmptyLoading />
+        <p>
+          Betting options are not available.
+          Consider choosing other dates.
+        </p>
+        <button>Go To Homepage</button>
+      </div>
     </div>
   )
 }

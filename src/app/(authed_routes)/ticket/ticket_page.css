@@ -53,3 +53,27 @@
     text-transform: capitalize;
     border-radius: 12px;
 }
+
+.empty_ticket_render {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.empty_ticket_render p {
+    color: var(--gray_color);
+    max-width: 300px;
+    text-align: center;
+}
+
+.empty_ticket_render button {
+    background-color: var(--my-green);
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 500;
+    font-size: .85rem;
+}
