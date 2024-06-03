@@ -58,13 +58,12 @@ function TicketPage() {
           <Link href="/" className='empty_ticket_btn'>Go To Homepage</Link>
         </div>: null
       }
-      <div className="ticket_bet_container">
-        <BetBox bet_type='Multiple'>
-          <div className="ticket_bet_inner_box">
-            <BettingTeams />
-            <BettingTeams />
-          </div>
-        </BetBox>
+      <div className="ticket_betting_receipts_container">
+        {/* RENDER RECEIPTS HERE */}
+        <BettingReceipt bet_type='System' />
+        <BettingReceipt bet_type='Multiple' />
+        <BettingReceipt bet_type='Multiple' />
+        <BettingReceipt bet_type='System' />
       </div>
     </div>
   )
@@ -86,6 +85,43 @@ const BetBox = ({ bet_type, children }: BetBoxProps) => {
     </div>
   )
 }
+
+
+
+
+type BettingReceiptProps = { bet_type: string }
+
+const BettingReceipt = ({ bet_type }:BettingReceiptProps) => {
+  return(
+    <div className="ticket_bet_container">
+        <BetBox bet_type={bet_type}>
+          <div className="ticket_bet_inner_box">
+            <BettingTeams />
+            <BettingTeams />
+            <div className="ticket_bet_inner_bet_details">
+              <div className="ticket_bet_inner_odds">
+                <div>TOTAL ODDS</div>
+                <p>6.38</p>
+              </div>
+              <div className="ticket_bet_inner_bet_amount">
+                <div>BET AMOUNT</div>
+                <p>$1,000,000</p>
+              </div>
+              <div className="ticket_bet_inner_results">
+                <div>Won</div>
+                <p>$7,000,000</p>
+              </div>
+            </div>
+            <button className="ticket_bet_cashout_btn">Cashout :$1,000,000</button>
+          </div>
+        </BetBox>
+      </div>
+  )
+}
+
+
+
+
 
 const BettingTeams = () => {
   return(

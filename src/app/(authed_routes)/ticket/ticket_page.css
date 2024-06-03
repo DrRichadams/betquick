@@ -82,16 +82,6 @@
     font-size: .85rem;
 }
 
-.ticket_bet_container {
-    max-width: 500px;
-    /* min-height: 300px; */
-    background-color: #1F1F1F;
-    position: relative;
-    border-radius: 20px;
-    padding-top: 55px;
-    overflow: hidden;
-}
-
 .bet_box_title_box {
     color: #fff;
     background-color: var(--my-green);
@@ -116,6 +106,15 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.ticket_bet_cashout_btn {
+    background-color: var(--my-green);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: .85rem;
 }
 
  .betting_teams_container{
@@ -249,3 +248,86 @@
 .betting_teams_restof_contents {
     flex: 1;
 }
+
+.ticket_bet_inner_bet_details {
+    margin-top: 8px;
+}
+
+.ticket_bet_inner_odds {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ticket_bet_inner_bet_amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ticket_bet_inner_results {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ticket_bet_inner_odds div,
+.ticket_bet_inner_bet_amount div {
+    color: var(--gray_color);
+    font-size: .9rem;
+}
+
+.ticket_bet_inner_odds,
+.ticket_bet_inner_bet_amount {
+    margin-bottom: 8px;
+}
+
+.ticket_bet_inner_odds p,
+.ticket_bet_inner_bet_amount p {
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.ticket_bet_inner_results {
+    margin-top: 20px;
+}
+
+.ticket_bet_inner_results div {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.ticket_bet_inner_results p {
+    color: var(--my-green);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.ticket_betting_receipts_container {
+     display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    /* background-color: red; */
+    margin-top: 40px;
+
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 30px; */
+}
+
+.ticket_bet_container {
+    /* max-width: 500px; */
+    /* min-height: 300px; */
+    min-width: 500px;
+    background-color: #1F1F1F;
+    position: relative;
+    border-radius: 20px;
+    padding-top: 60px;
+    /* padding-bottom: 30px; */
+    overflow: hidden;
+    /* margin: auto; */
+}
+
+
+
