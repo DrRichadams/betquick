@@ -26,12 +26,17 @@ import mob_menu_icon from "../../../public/pngs/menu_ico.png";
 import { HiDotsHorizontal } from "react-icons/hi";
 import AuthModal from '@/modals/auth_modal';
 import { useGlobalContext } from '@/context/store';
-import { UserButton } from '@clerk/nextjs';
+import { UserButton, useUser } from '@clerk/nextjs';
 
 const MainNav = () => {
     const pathname = usePathname();
-    const [ signedIn, set_signedIn ] = useState(false)
+    // const [ signedIn, set_signedIn ] = useState(false)
     const { isAuthModal, setIsAuthModal } = useGlobalContext();
+    const { user, isLoaded, isSignedIn } = useUser();
+
+    console.log("authed user: ", user)
+    console.log("is loaded: ", isLoaded)
+    console.log("is signed in: ", isSignedIn)
     
   return (
     <div className='main_nav_container'>
@@ -46,7 +51,7 @@ const MainNav = () => {
             <div className="left_side_content">
                 <Link href="/"><Image src={logo} alt='logo' className='main_nav_logo' /></Link>
                 {
-                    signedIn?
+                    isLoaded&&isSignedIn?
                     <div className='nav_left_contents_box none_menu_sections'>
                         <button className='nav_btn_bonuses'>
                             <Image src={gift_icon} alt='bonuses' style={{ width: "22px" }} />
@@ -58,7 +63,7 @@ const MainNav = () => {
             </div>
             <div className="right_side_content">
                 {
-                    signedIn?
+                    isLoaded&&isSignedIn?
                     <div className='nav_authed_wallet none_menu_sections'>
                         <div className="nav_balance_box">
                             <Image src={gold_coin} alt='coin' style={{ width: '20px' }} />
@@ -73,7 +78,7 @@ const MainNav = () => {
                 }
 
                 {
-                    !signedIn?<div className="auth_btns_box none_menu_sections">
+                    isLoaded && !isSignedIn?<div className="auth_btns_box none_menu_sections">
                                 <Link href="/sign-up" className='nav_btn_signup auth_btns_box_buttons'>Sign up</Link>
                                 <Link href="/sign-in" className='nav_btn_login auth_btns_box_buttons'>Log in</Link>
                                 {/* <button className='nav_btn_login' onClick={() => setIsAuthModal(true)}>Log in</button> */}
@@ -95,7 +100,7 @@ const MainNav = () => {
                     <HiMiniCog6Tooth size={25} color='#d5d5d5' />
                 </div>
                 {
-                    signedIn?
+                    isLoaded&&isSignedIn?
                     <div className='nav_notification'>
                         <IoNotifications color='#d5d5d5' size={20} />
                     </div>:
@@ -104,7 +109,7 @@ const MainNav = () => {
                 <div className="chat_btn none_menu_sections">
                     <IoChatbubbleEllipses size={22} color='#d5d5d5' />
                 </div>
-                {/* <UserButton /> */}
+                <UserButton />
                 <button className="main_nav_mobile_menu_btn">
                     <Image src={mob_menu_icon} alt='menu' style={{ width: "24px" }} />
                 </button>

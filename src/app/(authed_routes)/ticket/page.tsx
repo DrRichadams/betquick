@@ -17,12 +17,9 @@ function TicketPage() {
   const [ isEmpty ] = useState(false)
   const [ no_tickets, set_no_tickets ] = useState(false)
 
-  const changeOption = (option: string) => {
-    set_game_option(option)
-  }
-  const changeBetOption = (id: number) => {
-    set_selected_bet(id)
-  }
+  const changeOption = (option: string) => { set_game_option(option) }
+  const changeBetOption = (id: number) => { set_selected_bet(id) }
+  
   return (
     <div className="ticket_page_container">
       <div className="ticket_page_title_box">
