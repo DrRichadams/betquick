@@ -24,8 +24,8 @@ function LivePage() {
       <LeagueSelectorV2 />
       <div className="lives_highlights">
         {
-          new Array(11).fill(1).map(() => (
-            <HighlightComp isActive={true} />
+          new Array(11).fill(1).map((_, i) => (
+            <HighlightComp isActive={true} key={i} />
           ))
         }
       </div>
