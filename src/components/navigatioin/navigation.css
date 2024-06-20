@@ -178,6 +178,30 @@
   color: #fff;
 }
 
+.main_nav_bonuses_claim_all_btn {
+  background-color: #B1BF24;
+  background-color: var(--my-green);
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.bonus_claim_btn {
+  background-color: var(--my-green);
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 300;
+}
+
+.main_nav_bonuses_actual {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .icon_n_title,
 .main_nav_single_bonus_box {
   display: flex;
@@ -195,6 +219,16 @@
 .icon_n_title {
   /* padding: 8px; */
   justify-content: space-between;
+}
+
+.icon_n_title p {
+  color: #fff;
+}
+
+.bonus_above_label {
+  font-size: .8rem !important;
+  color: rgb(150, 148, 148) !important;
+  font-weight: 400 !important;
 }
 
 .logo_drop {

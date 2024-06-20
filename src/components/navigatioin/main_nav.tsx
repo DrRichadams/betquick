@@ -82,6 +82,30 @@ const MainNav = () => {
                                     </div>
                                     <button className="bonus_claim_btn">Claim</button>
                                 </div>
+                                <div className="main_nav_single_bonus_box">
+                                    <div className="icon_n_title">
+                                            <Image src={crypto_bonus} alt='logo' width={25} height={25} />
+                                            <p>Crypto fund Bonus</p>
+                                    </div>
+                                    <button className="bonus_claim_btn">Claim</button>
+                                </div>
+                                <div className="main_nav_single_bonus_box">
+                                    <div className="icon_n_title">
+                                            <Image src={big_bonus} alt='logo' width={25} height={25} />
+                                            <div>
+                                                <p>Big Bet Bonus</p>
+                                                <p className='bonus_above_label'>Bonus above $1000</p>
+                                            </div>
+                                    </div>
+                                    <button className="bonus_claim_btn">Claim</button>
+                                </div>
+                                <div className="main_nav_single_bonus_box">
+                                    <div className="icon_n_title">
+                                            <Image src={monthly_bonus} alt='logo' width={25} height={25} />
+                                            <p>Monthly Bonus</p>
+                                    </div>
+                                    <button className="bonus_claim_btn">Claim</button>
+                                </div>
                             </div>
                             <div className="main_nav_bonuses_controls">
                                 <button className="main_nav_bonuses_claim_all_btn">Claim All Bonuses</button>
