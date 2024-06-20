@@ -16,11 +16,14 @@ export const metadata: Metadata = {
   description: "The most reliable betting platform",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  // const myData = await GetData();
+  // console.log("My data: ", myData)
   
   return (
     <ClerkProvider>
@@ -48,4 +51,8 @@ export default function RootLayout({
   );
 }
 
-
+// async function GetData(){
+//   const data = await fetch("https://api.sportmonks.com/v3/football/fixtures?api_token=oNYUa5ntGLYGxqywtCIIlB03gdmtrx9EjK1EgugN0JxkOWDwmviJaoIln9dt");
+//   const response = await data.json();
+//   return response;
+// }

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./navigation.css";
 import Image from 'next/image';
 import logo from "../../../public/pngs/betquick_logo.png"
@@ -34,9 +34,10 @@ const MainNav = () => {
     const { isAuthModal, setIsAuthModal } = useGlobalContext();
     const { user, isLoaded, isSignedIn } = useUser();
 
-    console.log("authed user: ", user)
-    console.log("is loaded: ", isLoaded)
-    console.log("is signed in: ", isSignedIn)
+    // console.log("authed user: ", user)
+    // console.log("is loaded: ", isLoaded)
+    // console.log("is signed in: ", isSignedIn)
+
     
   return (
     <div className='main_nav_container'>
