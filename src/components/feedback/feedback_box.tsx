@@ -1,12 +1,19 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, CSSProperties } from 'react';
 import "./feedback.css";
 import { useUser } from '@clerk/nextjs';
+import ClipLoader from "react-spinners/ClipLoader";
 
 function FeedbackComp() {
 
-    const { isLoaded, isSignedIn, user } = useUser();
+    // const { isLoaded, isSignedIn, user } = useUser();
+
+    const { user, isLoaded, isSignedIn } = {
+        user: { id: 1 },
+        isLoaded: true,
+        isSignedIn: true
+    };
 
     const [ feedback, setFeedBack ] = useState("")
     const [ feedbackMessage, setFeedBackMessage ] = useState({
@@ -58,6 +65,12 @@ function FeedbackComp() {
         })
     }
 
+    const override: CSSProperties = {
+        display: "block",
+        margin: "0 auto",
+        borderColor: "#fff",
+      };
+
 
   return (
     <div className='feedback_container'>
@@ -92,7 +105,18 @@ function FeedbackComp() {
                 </div>
                 <p className="feedback_warning">0-1500 characters</p>
             </div>
-            <button disabled={isSubmiting}>{isSubmiting ? "Submitting...":"Leave Feedback"}</button>
+            <button disabled={isSubmiting} className='feedback_submit_btn'>
+                    {isSubmiting ? 
+                        <ClipLoader
+                            color={"#fff"}
+                            loading={isSubmiting}
+                            cssOverride={override}
+                            size={20}
+                            aria-label="Loading Spinner"
+                            data-testid="loader"
+                      />
+                    :"Leave Feedback"}
+            </button>
         </form>
     </div>
   )

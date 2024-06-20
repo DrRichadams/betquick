@@ -26,7 +26,18 @@ export default async function RootLayout({
   // console.log("My data: ", myData)
   
   return (
-    <ClerkProvider>
+    // <ClerkProvider>
+    //   <html lang="en">
+    //     <body className={`${montserrat.className} body_container`}>
+    //       <GlobalContextProvider>
+    //         <MainNav />
+    //         {children}
+    //         <FeedbackComp />
+    //         <Footer />
+    //       </GlobalContextProvider>
+    //     </body>
+    //   </html>
+    // </ClerkProvider>
       <html lang="en">
         <body className={`${montserrat.className} body_container`}>
           <GlobalContextProvider>
@@ -37,17 +48,6 @@ export default async function RootLayout({
           </GlobalContextProvider>
         </body>
       </html>
-    </ClerkProvider>
-      // <html lang="en">
-      //   <body className={`${montserrat.className} body_container`}>
-      //     <GlobalContextProvider>
-      //       <MainNav />
-      //       {children}
-      //       <FeedbackComp />
-      //       <Footer />
-      //     </GlobalContextProvider>
-      //   </body>
-      // </html>
   );
 }
 

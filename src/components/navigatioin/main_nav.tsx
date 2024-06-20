@@ -23,6 +23,12 @@ import gift_icon from "../../../public/pngs/btn_gift.png";
 import logo_no_letter from "../../../public/pngs/logo_no_letter.png";
 import gold_coin from "../../../public/pngs/gold_coin.png";
 import mob_menu_icon from "../../../public/pngs/menu_ico.png";
+
+import login_bonus from "../../../public/pngs/login_bonus.png";
+import crypto_bonus from "../../../public/pngs/crypto_bonus.png";
+import big_bonus from "../../../public/pngs/big_bonus.png";
+import monthly_bonus from "../../../public/pngs/monthly_bonus.png";
+
 import { HiDotsHorizontal } from "react-icons/hi";
 import AuthModal from '@/modals/auth_modal';
 import { useGlobalContext } from '@/context/store';
@@ -32,7 +38,12 @@ const MainNav = () => {
     const pathname = usePathname();
     // const [ signedIn, set_signedIn ] = useState(false)
     const { isAuthModal, setIsAuthModal } = useGlobalContext();
-    const { user, isLoaded, isSignedIn } = useUser();
+    // const { user, isLoaded, isSignedIn } = useUser();
+    const { user, isLoaded, isSignedIn } = {
+        user: {},
+        isLoaded: true,
+        isSignedIn: true
+    };
 
     // console.log("authed user: ", user)
     // console.log("is loaded: ", isLoaded)
@@ -58,6 +69,24 @@ const MainNav = () => {
                             <Image src={gift_icon} alt='bonuses' style={{ width: "22px" }} />
                             <p>Boneses</p>
                         </button>
+                        <div className="main_nav_bonuses_box">
+                            <div className="main_nav_bonuses_title">
+                                <h3>Available Bonuses</h3>
+                                <p>3/4</p>
+                            </div>
+                            <div className="main_nav_bonuses_actual">
+                                <div className="main_nav_single_bonus_box">
+                                    <div className="icon_n_title">
+                                            <Image src={login_bonus} alt='logo' width={25} height={25} />
+                                            <p>Log In Bonus</p>
+                                    </div>
+                                    <button className="bonus_claim_btn">Claim</button>
+                                </div>
+                            </div>
+                            <div className="main_nav_bonuses_controls">
+                                <button className="main_nav_bonuses_claim_all_btn">Claim All Bonuses</button>
+                            </div>
+                        </div>
                     </div>
                     :""
                 }
@@ -110,7 +139,7 @@ const MainNav = () => {
                 <div className="chat_btn none_menu_sections">
                     <IoChatbubbleEllipses size={22} color='#d5d5d5' />
                 </div>
-                <UserButton />
+                {/* <UserButton /> */}
                 <button className="main_nav_mobile_menu_btn">
                     <Image src={mob_menu_icon} alt='menu' style={{ width: "24px" }} />
                 </button>

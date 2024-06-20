@@ -69,6 +69,11 @@
     padding-left: 8px;
 }
 
+.feedback_submit_btn {
+    width: 150px;
+    height: 40px;
+}
+
 
 @media (max-width: 830px) {
     .watermark {

@@ -1,5 +1,10 @@
 
 
+.main_nav_container {
+  position: relative;
+  z-index: 2000;
+}
+
 .left_side_content {
   display: flex;
   align-items: center;
@@ -80,7 +85,7 @@
 }
 
 .flag_circle {
-  background-color: red;
+  /* background-color: red; */
   /* padding: 12px; */
   width: 23px;
   height: 23px;
@@ -140,6 +145,23 @@
 
 /* AUTHENTICATED ITEM STYLES */
 
+
+.nav_left_contents_box {
+  position: relative;
+}
+
+
+.main_nav_bonuses_box {
+  background-color: #333333;
+  width: 350px;
+  min-height: 450px;
+  position: absolute;
+  /* bottom: -100%; */
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 14px;
+}
+
 .nav_btn_bonuses {
   background-color: #B1BF24;
   display: flex;
@@ -154,6 +176,25 @@
   font-family: var(--font-mont);
   font-weight: 600;
   color: #fff;
+}
+
+.icon_n_title,
+.main_nav_single_bonus_box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.main_nav_single_bonus_box {
+  background-color: #404040;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.icon_n_title {
+  /* padding: 8px; */
+  justify-content: space-between;
 }
 
 .logo_drop {
@@ -255,6 +296,7 @@
   align-items: center;
   justify-content: center;
 }
+
 
 
 
