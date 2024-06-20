@@ -160,6 +160,12 @@
   border-radius: 12px;
   padding: 15px;
   margin-top: 14px;
+  display: none;
+  flex-direction: column;
+  /* Remember to remove position absolute if anything goes wrong with the nav */
+  position: absolute;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
 }
 
 .nav_btn_bonuses {
@@ -196,10 +202,55 @@
   font-weight: 300;
 }
 
+.bonus_claim_monthly_btn {
+  background-color: rgb(88, 88, 88);
+  padding: 12px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 400;
+  font-size: .8rem;
+}
+
+.main_nav_bonuses_controls {
+  background-color: #333333;
+  /* background-color: blue; */
+  /* height: 100%; */
+  /* flex: 1; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 15px 15px 15px;
+}
+
+.main_nav_bonuses_title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 0;
+}
+
+.main_nav_bonuses_title h3{
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.main_nav_bonuses_title p{
+  color: var(--my-green);
+}
+
 .main_nav_bonuses_actual {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
+  position: relative;
+  /* background-color: red; */
+  height: 100%;
+  flex: 1;
 }
 
 .icon_n_title,

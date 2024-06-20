@@ -36,6 +36,7 @@ import { UserButton, useUser } from '@clerk/nextjs';
 
 const MainNav = () => {
     const pathname = usePathname();
+    const [ bonusOpen, setBonusOpen ] = useState(false)
     // const [ signedIn, set_signedIn ] = useState(false)
     const { isAuthModal, setIsAuthModal } = useGlobalContext();
     // const { user, isLoaded, isSignedIn } = useUser();
@@ -48,6 +49,10 @@ const MainNav = () => {
     // console.log("authed user: ", user)
     // console.log("is loaded: ", isLoaded)
     // console.log("is signed in: ", isSignedIn)
+
+    const toggleBonusBtn = () => {
+        setBonusOpen(!bonusOpen)
+    }
 
     
   return (
@@ -65,11 +70,11 @@ const MainNav = () => {
                 {
                     isLoaded&&isSignedIn?
                     <div className='nav_left_contents_box none_menu_sections'>
-                        <button className='nav_btn_bonuses'>
+                        <button className='nav_btn_bonuses' onClick={toggleBonusBtn}>
                             <Image src={gift_icon} alt='bonuses' style={{ width: "22px" }} />
                             <p>Boneses</p>
                         </button>
-                        <div className="main_nav_bonuses_box">
+                        <div className="main_nav_bonuses_box" style={{ display: bonusOpen? "flex":"none" }}>
                             <div className="main_nav_bonuses_title">
                                 <h3>Available Bonuses</h3>
                                 <p>3/4</p>
@@ -104,7 +109,7 @@ const MainNav = () => {
                                             <Image src={monthly_bonus} alt='logo' width={25} height={25} />
                                             <p>Monthly Bonus</p>
                                     </div>
-                                    <button className="bonus_claim_btn">Claim</button>
+                                    <button className="bonus_claim_monthly_btn">30 DAYS LEFT</button>
                                 </div>
                             </div>
                             <div className="main_nav_bonuses_controls">
