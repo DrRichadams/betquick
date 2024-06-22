@@ -39,12 +39,12 @@ const MainNav = () => {
     const [ bonusOpen, setBonusOpen ] = useState(false)
     // const [ signedIn, set_signedIn ] = useState(false)
     const { isAuthModal, setIsAuthModal } = useGlobalContext();
-    // const { user, isLoaded, isSignedIn } = useUser();
-    const { user, isLoaded, isSignedIn } = {
-        user: {},
-        isLoaded: true,
-        isSignedIn: true
-    };
+    const { user, isLoaded, isSignedIn } = useUser();
+    // const { user, isLoaded, isSignedIn } = {
+    //     user: {},
+    //     isLoaded: true,
+    //     isSignedIn: true
+    // };
 
     // console.log("authed user: ", user)
     // console.log("is loaded: ", isLoaded)
@@ -168,7 +168,7 @@ const MainNav = () => {
                 <div className="chat_btn none_menu_sections">
                     <IoChatbubbleEllipses size={22} color='#d5d5d5' />
                 </div>
-                {/* <UserButton /> */}
+                <UserButton />
                 <button className="main_nav_mobile_menu_btn">
                     <Image src={mob_menu_icon} alt='menu' style={{ width: "24px" }} />
                 </button>
