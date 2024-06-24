@@ -15,6 +15,27 @@ type highlightProps = {
     isActive: boolean
 }
 
+type handleBetPromiseProps = {
+    betType: string,
+    fixtureID: string
+}
+
+const handleBetPromise = async ({ betType, fixtureID }: handleBetPromiseProps) => {
+    // AFTER CHECKING AUTH STATE
+    let uid = 123;
+    const res = await fetch(`http://localhost:3000/api/betting/promise_bet/${uid}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            uid,
+            betType,
+            fixtureID
+        })
+    });
+}
+
 export const HighlightComp = ({ isActive }: highlightProps) => {
     return(
         <div className="highlight_box">
@@ -60,12 +81,12 @@ export const HighlightComp = ({ isActive }: highlightProps) => {
                     <div><p>Draw</p><p>0.7</p></div>
                     <div><p>2</p><p>0.7</p></div>
                 </div> */}
-                <div className="league_btn_bet"><p>1</p><p>0.7</p></div>
-                <div className="league_btn_bet"><p>Draw</p><p>0.7</p></div>
-                <div className="league_btn_bet"><p>2</p><p>0.7</p></div>
-                <div className="league_btn_arrow">
+                <button className="league_btn_bet"><p>1</p><p>0.7</p></button>
+                <button className="league_btn_bet"><p>Draw</p><p>0.7</p></button>
+                <button className="league_btn_bet"><p>2</p><p>0.7</p></button>
+                <button className="league_btn_arrow">
                     <Image src={arrow_down} alt='arrow' style={{ width: "22px" }} />
-                </div>
+                </button>
             </div>
         </div>
     )
