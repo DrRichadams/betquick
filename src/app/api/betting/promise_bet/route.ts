@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server"
 
-export const POST = async () => {
-    return NextResponse.json({ message: "OK", matchDetails: { leagueID: 1, fixtureID: 2 } }, { status: 201 })
+export const POST = async (req: Request, res: Response) => {
+    const data = await req.json();
+    console.log("THE DATA: ", data)
+    return NextResponse.json({ message: "OK", matchDetails: data}, { status: 201 })
 }
