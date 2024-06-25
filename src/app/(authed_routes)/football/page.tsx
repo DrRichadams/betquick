@@ -5,7 +5,12 @@ import LeagueSelectorV2 from '@/components/league_selector/league_selector_v2';
 import GameSection from '@/components/game_section_comp/game_sections';
 import { HighlightComp } from '@/components/highlights/highlight_box';
 
-function FootballPage() {
+const  FootballPage = async () => {
+
+  const fixtures = await fetch("http://localhost:3000/api/fixtures", { cache: "no-store" });
+  const data = await fixtures.json()
+  console.log("returned datased: ",  data.data.data)
+
   return (
     <div className="football_page_container">
       <div className="football_page_header">
