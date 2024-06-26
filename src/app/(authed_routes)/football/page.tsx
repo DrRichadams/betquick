@@ -8,8 +8,8 @@ import { HighlightComp } from '@/components/highlights/highlight_box';
 const  FootballPage = async () => {
 
   const fixtures = await fetch("http://localhost:3000/api/fixtures", { cache: "no-store" });
-  const data = await fixtures.json()
-  console.log("returned datased: ",  data.data.data)
+  const {data} = await fixtures.json()
+  console.log("returned datased: ",  data.data)
 
   return (
     <div className="football_page_container">
@@ -22,17 +22,22 @@ const  FootballPage = async () => {
       </div>
 
       <GameSection section_name='live'>
-        <HighlightComp isActive={true} />
-        <HighlightComp isActive={true} />
+        {
+          data.data.map((fixture: any) => {
+            return(
+              <HighlightComp isActive={true} key={fixture.id} fixture={fixture} />
+            )
+          })
+        }
       </GameSection>
-      <GameSection section_name='popular'>
+      {/* <GameSection section_name='popular'>
         <HighlightComp isActive={true} />
         <HighlightComp isActive={false} />
       </GameSection>
       <GameSection section_name='upcoming'>
         <HighlightComp isActive={false} />
         <HighlightComp isActive={false} />
-      </GameSection>
+      </GameSection> */}
 
       <div className="football_page_footer">
         While we strive to ensure the accuracy of the data on our site, 

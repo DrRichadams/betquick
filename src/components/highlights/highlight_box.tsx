@@ -9,10 +9,12 @@ import chelsea from "../../../public/pngs/chelsea.png"
 import star from "../../../public/pngs/star.png"
 import graph from "../../../public/pngs/graph.png"
 import arrow_down from "../../../public/pngs/arrow_down_green.png"
+import { url } from "inspector";
 
 
 type highlightProps = {
-    isActive: boolean
+    isActive: boolean,
+    fixture: any
 }
 
 type handleBetPromiseProps = {
@@ -36,13 +38,15 @@ const handleBetPromise = async ({ betType, fixtureID }: handleBetPromiseProps) =
     });
 }
 
-export const HighlightComp = ({ isActive }: highlightProps) => {
+export const HighlightComp = ({ isActive, fixture }: highlightProps) => {
+    console.log("The fixture: ", fixture)
     return(
         <div className="highlight_box">
             <div className="league_titles">
                 <div className="league_title_name">
                     <Image src={football_ico} alt='football' style={{ width: "20px" }} />
-                    <p>Premier league</p>
+                    {/* <p>Premier league</p> */}
+                    <p>{fixture.league.name}</p>
                 </div>
                 <div className="league_top_icons">
                     <Image src={star} alt='ico' style={{ width: "20px" }} />
@@ -56,14 +60,25 @@ export const HighlightComp = ({ isActive }: highlightProps) => {
                         <p>Today at 6:30AM</p>
                     </div>
                     <div className="league_teams">
-                        <div className="league_team">
+                        {/* <div className="league_team">
                             <Image src={manu} alt='manu' style={{ width: "35px" }} />
                             <p>Manchester United</p>
                         </div>
                         <div className="league_team">
                             <Image src={chelsea} alt='chelsea' style={{ width: "35px" }} />
                             <p>Chelsea FC</p>
-                        </div>
+                        </div> */}
+                        {
+                            fixture.participants.map((team: any) => {
+                                return(
+                                    <div className="league_team" key={team.id}>
+                                        {/* <Image src={chelsea} alt='chelsea' style={{ width: "35px" }} /> */}
+                                        <img src={team.image_path} alt='' style={{ width: "35px" }} width={35} height={35} />
+                                        <p>{team.name }</p>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                     <div className="numsa">1X2</div>
                 </div>
