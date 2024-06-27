@@ -46,7 +46,7 @@ export const HighlightComp = ({ isActive, fixture }: highlightProps) => {
                 <div className="league_title_name">
                     <Image src={football_ico} alt='football' style={{ width: "20px" }} />
                     {/* <p>Premier league</p> */}
-                    <p>{fixture.league.name}</p>
+                    <p>{fixture?.league.name}</p>
                 </div>
                 <div className="league_top_icons">
                     <Image src={star} alt='ico' style={{ width: "20px" }} />
@@ -60,16 +60,8 @@ export const HighlightComp = ({ isActive, fixture }: highlightProps) => {
                         <p>Today at 6:30AM</p>
                     </div>
                     <div className="league_teams">
-                        {/* <div className="league_team">
-                            <Image src={manu} alt='manu' style={{ width: "35px" }} />
-                            <p>Manchester United</p>
-                        </div>
-                        <div className="league_team">
-                            <Image src={chelsea} alt='chelsea' style={{ width: "35px" }} />
-                            <p>Chelsea FC</p>
-                        </div> */}
                         {
-                            fixture.participants.map((team: any) => {
+                            fixture?.participants.map((team: any) => {
                                 return(
                                     <div className="league_team" key={team.id}>
                                         {/* <Image src={chelsea} alt='chelsea' style={{ width: "35px" }} /> */}
@@ -91,11 +83,6 @@ export const HighlightComp = ({ isActive, fixture }: highlightProps) => {
                 }
             </div>
             <div className="league_btn_boxes">
-                {/* <div className="league_main_btns">
-                    <div><p>1</p><p>0.7</p></div>
-                    <div><p>Draw</p><p>0.7</p></div>
-                    <div><p>2</p><p>0.7</p></div>
-                </div> */}
                 <button className="league_btn_bet"><p>1</p><p>0.7</p></button>
                 <button className="league_btn_bet"><p>Draw</p><p>0.7</p></button>
                 <button className="league_btn_bet"><p>2</p><p>0.7</p></button>
