@@ -13,17 +13,15 @@ const  FootballPage = async () => {
   const {data} = await fixtures.json()
   // console.log("returned datased: ",  data.data)
 
-  let fireDocs: any = [];
-  const q = query(collection(db, "feedback"));
+  // let fireDocs: any = [];
+  // const q = query(collection(db, "favourite_fixtures"));
 
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    // console.log(doc.id, " => ", doc.data());
-    fireDocs.push(doc.data())
-  });
+  // const querySnapshot = await getDocs(q);
+  // querySnapshot.forEach((doc) => {
+  //   fireDocs.push(doc.data())
+  // });
 
-  console.log("fire docs: ", fireDocs)
+  // console.log("fire docs: ", fireDocs)
 
   return (
     <div className="football_page_container">

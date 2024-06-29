@@ -7,9 +7,15 @@ import timer from "../../../public/pngs/timer.png"
 import manu from "../../../public/pngs/manu.png"
 import chelsea from "../../../public/pngs/chelsea.png"
 import star from "../../../public/pngs/star.png"
+import { FaStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
 import graph from "../../../public/pngs/graph.png"
 import arrow_down from "../../../public/pngs/arrow_down_green.png"
 import { url } from "inspector";
+import React, { useState, useEffect } from "react";
+import { doc, onSnapshot } from "firebase/firestore";
+import { db } from "@/app/firebase/config";
+import { useUser } from "@clerk/nextjs";
 
 
 type highlightProps = {
@@ -38,58 +44,81 @@ const handleBetPromise = async ({ betType, fixtureID }: handleBetPromiseProps) =
     });
 }
 
+
 export const HighlightComp = ({ isActive, fixture }: highlightProps) => {
-    console.log("The fixture: ", fixture)
-    return(
-        <div className="highlight_box">
-            <div className="league_titles">
-                <div className="league_title_name">
-                    <Image src={football_ico} alt='football' style={{ width: "20px" }} />
-                    {/* <p>Premier league</p> */}
-                    <p>{fixture?.league.name}</p>
-                </div>
-                <div className="league_top_icons">
-                    <Image src={star} alt='ico' style={{ width: "20px" }} />
-                    <Image src={graph} alt='ico' style={{ width: "20px" }} />
-                </div>
-            </div>
-            <div className="highlight_middle">
-                <div className="highlight_middle_left">
-                    <div className="league_match_time">
-                        <Image src={timer} alt='timer' style={{ width: "15px" }} />
-                        <p>Today at 6:30AM</p>
+    const [ fixtureData, setFixtureData ] = useState(null);
+    const [ isFav, setIsfave ] = useState(false)
+    const {user} = useUser()
+
+    useEffect(() => {
+        setFixtureData(fixture)
+    }, [])
+    console.log("The fixture: ", fixtureData)
+    console.log("The userID: ", user)
+
+    if(user) {
+        const unsub = onSnapshot(doc(db, "favourite_fixtures", user.id), (doc) => {
+            console.log("Current data: ", doc.data());
+        });
+    }
+
+    if(fixtureData){
+        return(
+            <div className="highlight_box">
+                <div className="league_titles">
+                    <div className="league_title_name">
+                        <Image src={football_ico} alt='football' style={{ width: "20px" }} />
+                        {/* <p>Premier league</p> */}
+                        <p>{fixture?.league.name}</p>
                     </div>
-                    <div className="league_teams">
-                        {
-                            fixture?.participants.map((team: any) => {
-                                return(
-                                    <div className="league_team" key={team.id}>
-                                        {/* <Image src={chelsea} alt='chelsea' style={{ width: "35px" }} /> */}
-                                        <img src={team.image_path} alt='' style={{ width: "35px" }} width={35} height={35} />
-                                        <p>{team.name }</p>
-                                    </div>
-                                )
-                            })
-                        }
+                    <div className="league_top_icons">
+                        <button>{ isFav == true ?
+                              <FaRegStar size={25} color="#808080" />:
+                              <FaStar size={25} color="#FFC000" />
+                      }</button>
+                        <Image src={graph} alt='ico' style={{ width: "20px" }} />
                     </div>
-                    <div className="numsa">1X2</div>
                 </div>
-                {
-                    isActive?
-                    <div className="highlight_middle_right">
-                        <div className="highlight_team highlight_teamA">4</div>
-                        <div className="highlight_team highlight_teamB">0</div>
-                    </div>:""
-                }
+                <div className="highlight_middle">
+                    <div className="highlight_middle_left">
+                        <div className="league_match_time">
+                            <Image src={timer} alt='timer' style={{ width: "15px" }} />
+                            <p>Today at 6:30AM</p>
+                        </div>
+                        <div className="league_teams">
+                            {
+                                fixture?.participants.map((team: any) => {
+                                    return(
+                                        <div className="league_team" key={team.id}>
+                                            {/* <Image src={chelsea} alt='chelsea' style={{ width: "35px" }} /> */}
+                                            <img src={team.image_path} alt='' style={{ width: "35px" }} width={35} height={35} />
+                                            <p>{team.name }</p>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                        <div className="numsa">1X2</div>
+                    </div>
+                    {
+                        isActive?
+                        <div className="highlight_middle_right">
+                            <div className="highlight_team highlight_teamA">4</div>
+                            <div className="highlight_team highlight_teamB">0</div>
+                        </div>:""
+                    }
+                </div>
+                <div className="league_btn_boxes">
+                    <button className="league_btn_bet"><p>1</p><p>0.7</p></button>
+                    <button className="league_btn_bet"><p>Draw</p><p>0.7</p></button>
+                    <button className="league_btn_bet"><p>2</p><p>0.7</p></button>
+                    <button className="league_btn_arrow">
+                        <Image src={arrow_down} alt='arrow' style={{ width: "22px" }} />
+                    </button>
+                </div>
             </div>
-            <div className="league_btn_boxes">
-                <button className="league_btn_bet"><p>1</p><p>0.7</p></button>
-                <button className="league_btn_bet"><p>Draw</p><p>0.7</p></button>
-                <button className="league_btn_bet"><p>2</p><p>0.7</p></button>
-                <button className="league_btn_arrow">
-                    <Image src={arrow_down} alt='arrow' style={{ width: "22px" }} />
-                </button>
-            </div>
-        </div>
-    )
+        )
+    } else {
+        return null;
+    }
 }
