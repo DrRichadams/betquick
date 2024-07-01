@@ -13,22 +13,14 @@ import graph from "../../../public/pngs/graph.png"
 import arrow_down from "../../../public/pngs/arrow_down_green.png"
 import { url } from "inspector";
 import React, { useState, useEffect } from "react";
-import { doc, onSnapshot } from "firebase/firestore";
+import { doc, onSnapshot, setDoc, getDoc } from "firebase/firestore";
 import { db } from "@/app/firebase/config";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import { useUser } from "@clerk/nextjs";
 
 
-type highlightProps = {
-    isActive: boolean,
-    fixture: any
-}
 
-type handleBetPromiseProps = {
-    betType: string,
-    fixtureID: string
-}
-
-const handleBetPromise = async ({ betType, fixtureID }: handleBetPromiseProps) => {
+const handleBetPromise = async ({ betType, fixtureID }: { betType: string, fixtureID: string }) => {
     // AFTER CHECKING AUTH STATE
     let uid = 123;
     const res = await fetch(`http://localhost:3000/api/betting/promise_bet/${uid}`, {
@@ -45,22 +37,54 @@ const handleBetPromise = async ({ betType, fixtureID }: handleBetPromiseProps) =
 }
 
 
-export const HighlightComp = ({ isActive, fixture }: highlightProps) => {
+async function AddToFavs(fixID: any, userID: any, isFav: boolean){
+    // GET CURRENT FAV FIXTURES FROM FIRESTORE FIRST BEFORE ADDING NEW DATA
+    const docRef = doc(db, "favourite_fixtures", `${fixID}`);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+        // let curFavs: any = [];
+        // let uniqFavs: any = curFavs.filter((item: any) => item.id != fixID)
+        // await setDoc(doc(db, "favourite_fixtures", fixID), [
+        //     ...uniqFavs, {
+        //         user_id: userID,
+        //         is_fav: isFav
+        //     }
+        // ]);
+    console.log("Document data:", docSnap.data());
+    } else {
+    // docSnap.data() will be undefined in this case
+    console.log("No such document!");
+    }
+        console.log("fixID: ", fixID);
+//         console.log("userID: ", userID);
+//         console.log("isFav: ", isFav);
+}
+
+
+
+// MAIN HIGHLLIGHT COMPONENT FUNCTION
+
+export const HighlightComp = ({ isActive, fixture, favFixtures }: { isActive: boolean, fixture: any, favFixtures: [] }) => {
     const [ fixtureData, setFixtureData ] = useState(null);
+    const [ curFavouriteFixtures, setCurFavouriteFixtures ] = useState([])
     const [ isFav, setIsfave ] = useState(false)
     const {user} = useUser()
 
+    const toggleFav = async(fixID: any) => {
+        setIsfave(!isFav);
+        console.log("Is working backend")
+        AddToFavs(fixture.id, user?.id, isFav);
+        console.log("Done working backend")
+    }
+
     useEffect(() => {
         setFixtureData(fixture)
+       
     }, [])
-    console.log("The fixture: ", fixtureData)
-    console.log("The userID: ", user)
-
-    if(user) {
-        const unsub = onSnapshot(doc(db, "favourite_fixtures", user.id), (doc) => {
-            console.log("Current data: ", doc.data());
-        });
-    }
+    
+    // console.log("The fixture: ", fixtureData)
+    // console.log("The userID: ", user)
 
     if(fixtureData){
         return(
@@ -72,9 +96,9 @@ export const HighlightComp = ({ isActive, fixture }: highlightProps) => {
                         <p>{fixture?.league.name}</p>
                     </div>
                     <div className="league_top_icons">
-                        <button>{ isFav == true ?
-                              <FaRegStar size={25} color="#808080" />:
-                              <FaStar size={25} color="#FFC000" />
+                        <button onClick={() => toggleFav(fixture.id)} style={{ display: user?"flex":"none" }}>{ isFav == true ?
+                              <FaStar size={25} color="#FFC000" />:
+                              <FaRegStar size={25} color="#808080" />
                       }</button>
                         <Image src={graph} alt='ico' style={{ width: "20px" }} />
                     </div>

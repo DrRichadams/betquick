@@ -11,17 +11,18 @@ const  FootballPage = async () => {
 
   const fixtures = await fetch("http://localhost:3000/api/fixtures", { cache: "no-store" });
   const {data} = await fixtures.json()
+
   // console.log("returned datased: ",  data.data)
 
-  // let fireDocs: any = [];
-  // const q = query(collection(db, "favourite_fixtures"));
+  let fireDocs: any = [];
+  const query_str = query(collection(db, "favourite_fixtures"));
 
-  // const querySnapshot = await getDocs(q);
-  // querySnapshot.forEach((doc) => {
-  //   fireDocs.push(doc.data())
-  // });
+  const querySnapshot = await getDocs(query_str);
+  querySnapshot.forEach((doc) => {
+    fireDocs.push(doc.data())
+  });
 
-  // console.log("fire docs: ", fireDocs)
+  console.log("fire docs: ", fireDocs)
 
   return (
     <div className="football_page_container">
@@ -36,8 +37,9 @@ const  FootballPage = async () => {
       <GameSection section_name='live'>
         {
           data.data.map((fixture: any) => {
+            let fixtureFavs = fireDocs.filter((item: any) => item.id == fixture.id)
             return(
-              <HighlightComp isActive={true} key={fixture.id} fixture={fixture} />
+              <HighlightComp isActive={true} key={fixture.id} fixture={fixture} favFixtures = {fixtureFavs} />
             )
           })
         }
