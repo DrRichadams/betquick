@@ -14,15 +14,15 @@ const  FootballPage = async () => {
 
   // console.log("returned datased: ",  data.data)
 
-  let fireDocs: any = [];
+  let favouriteFixtures: any = [];
   const query_str = query(collection(db, "favourite_fixtures"));
 
   const querySnapshot = await getDocs(query_str);
   querySnapshot.forEach((doc) => {
-    fireDocs.push(doc.data())
+    favouriteFixtures.push(doc.data())
   });
 
-  console.log("fire docs: ", fireDocs)
+  console.log("favourite Fixtures: ", favouriteFixtures)
 
   return (
     <div className="football_page_container">
@@ -37,9 +37,11 @@ const  FootballPage = async () => {
       <GameSection section_name='live'>
         {
           data.data.map((fixture: any) => {
-            let fixtureFavs = fireDocs.filter((item: any) => item.id == fixture.id)
+            // let fixtureFavs = favouriteFixtures.filter((item: any) => item.id == fixture.id)
+            let fixtureFavs = favouriteFixtures.find((item: any) => item.fixtureId == fixture.id)
+            // console.log("The server fav data: ", fixtureFavs)
             return(
-              <HighlightComp isActive={true} key={fixture.id} fixture={fixture} favFixtures = {fixtureFavs} />
+              <HighlightComp isActive={true} key={fixture.id} fixture={fixture} favFixtures = {fixtureFavs ? fixtureFavs:null} />
             )
           })
         }

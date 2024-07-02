@@ -15,7 +15,6 @@ import { url } from "inspector";
 import React, { useState, useEffect } from "react";
 import { doc, onSnapshot, setDoc, getDoc } from "firebase/firestore";
 import { db } from "@/app/firebase/config";
-import { collection, query, where, getDocs } from "firebase/firestore";
 import { useUser } from "@clerk/nextjs";
 
 
@@ -43,22 +42,53 @@ async function AddToFavs(fixID: any, userID: any, isFav: boolean){
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-        // let curFavs: any = [];
-        // let uniqFavs: any = curFavs.filter((item: any) => item.id != fixID)
-        // await setDoc(doc(db, "favourite_fixtures", fixID), [
-        //     ...uniqFavs, {
-        //         user_id: userID,
-        //         is_fav: isFav
-        //     }
-        // ]);
-    console.log("Document data:", docSnap.data());
+        // let favFxtObject = docSnap.data()
+        let curFavs: any = docSnap.data().users_for_fixture;
+
+        let uniqFavsData : any = curFavs.filter((item: any) => item.user_id != userID)
+        await setDoc(doc(db, "favourite_fixtures", `${fixID}`), {
+            fixtureId: fixID,
+            users_for_fixture: [
+                ...uniqFavsData, {
+                    user_id: userID,
+                    is_fav: isFav
+                }
+            ]
+    });
     } else {
     // docSnap.data() will be undefined in this case
     console.log("No such document!");
+    await setDoc(doc(db, "favourite_fixtures", `${fixID}`), {
+            fixtureId: fixID,
+            users_for_fixture: [{
+                user_id: userID,
+                is_fav: isFav
+            }]
+    });
     }
         console.log("fixID: ", fixID);
 //         console.log("userID: ", userID);
 //         console.log("isFav: ", isFav);
+}
+
+const GetFavsData = async (fixID: any) => {
+    const docRef = doc(db, "favourite_fixtures", `${fixID}`);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+    } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}
+
+const favLogic = (favs: [], userId: any) => {
+    let favObject = favs.find((item: any) => item.user_id == userId);
+    if (favObject) {
+        console.log("fav processed: ", favObject)
+        return favObject
+    }
+    console.log("Failed to process fav: ", favs, userId)
 }
 
 
@@ -70,6 +100,7 @@ export const HighlightComp = ({ isActive, fixture, favFixtures }: { isActive: bo
     const [ curFavouriteFixtures, setCurFavouriteFixtures ] = useState([])
     const [ isFav, setIsfave ] = useState(false)
     const {user} = useUser()
+    // const { users_for_fixture } = favFixtures | null
 
     const toggleFav = async(fixID: any) => {
         setIsfave(!isFav);
@@ -80,11 +111,17 @@ export const HighlightComp = ({ isActive, fixture, favFixtures }: { isActive: bo
 
     useEffect(() => {
         setFixtureData(fixture)
-       
+        // favLogic(favFixtures?.users_for_fixture, user?.id)
+        // favFixtures && favFixtures.users_for_fixture.find((item: any) => item.user_id == user?.id)
+        if(favFixtures) {
+            let curFavFxtObject = favFixtures.users_for_fixture.find((item: any) => item.user_id == user?.id)
+            console.log("Current fav fixture object: ", curFavFxtObject)
+        }
     }, [])
     
     // console.log("The fixture: ", fixtureData)
     // console.log("The userID: ", user)
+    // favFixtures && console.log("The current fav fixture data: ", favFixtures.users_for_fixture)
 
     if(fixtureData){
         return(
