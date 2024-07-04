@@ -4,18 +4,15 @@ import "./highlights.css";
 import Image from 'next/image';
 import football_ico from "../../../public/pngs/football.png"
 import timer from "../../../public/pngs/timer.png"
-import manu from "../../../public/pngs/manu.png"
-import chelsea from "../../../public/pngs/chelsea.png"
-import star from "../../../public/pngs/star.png"
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import graph from "../../../public/pngs/graph.png"
 import arrow_down from "../../../public/pngs/arrow_down_green.png"
-import { url } from "inspector";
 import React, { useState, useEffect } from "react";
-import { doc, onSnapshot, setDoc, getDoc } from "firebase/firestore";
+import { doc, setDoc, getDoc } from "firebase/firestore";
 import { db } from "@/app/firebase/config";
 import { useUser } from "@clerk/nextjs";
+import Link from "next/link";
 
 
 
@@ -42,7 +39,6 @@ async function AddToFavs(fixID: any, userID: any, isFav: boolean){
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-        // let favFxtObject = docSnap.data()
         let curFavs: any = docSnap.data().users_for_fixture;
 
         let uniqFavsData : any = curFavs.filter((item: any) => item.user_id != userID)
@@ -56,72 +52,38 @@ async function AddToFavs(fixID: any, userID: any, isFav: boolean){
             ]
     });
     } else {
-    // docSnap.data() will be undefined in this case
-    console.log("No such document!");
-    await setDoc(doc(db, "favourite_fixtures", `${fixID}`), {
-            fixtureId: fixID,
-            users_for_fixture: [{
-                user_id: userID,
-                is_fav: isFav
-            }]
-    });
-    }
-        console.log("fixID: ", fixID);
-//         console.log("userID: ", userID);
-//         console.log("isFav: ", isFav);
-}
-
-const GetFavsData = async (fixID: any) => {
-    const docRef = doc(db, "favourite_fixtures", `${fixID}`);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
-    } else {
         // docSnap.data() will be undefined in this case
-        console.log("No such document!");
+        await setDoc(doc(db, "favourite_fixtures", `${fixID}`), {
+                fixtureId: fixID,
+                users_for_fixture: [{
+                    user_id: userID,
+                    is_fav: isFav
+                }]
+        });
     }
-}
-
-const favLogic = (favs: [], userId: any) => {
-    let favObject = favs.find((item: any) => item.user_id == userId);
-    if (favObject) {
-        console.log("fav processed: ", favObject)
-        return favObject
-    }
-    console.log("Failed to process fav: ", favs, userId)
 }
 
 
 
 // MAIN HIGHLLIGHT COMPONENT FUNCTION
 
-export const HighlightComp = ({ isActive, fixture, favFixtures }: { isActive: boolean, fixture: any, favFixtures: [] }) => {
+export const HighlightComp = ({ isActive, fixture, favFixtures }: { isActive: boolean, fixture: any, favFixtures: any }) => {
     const [ fixtureData, setFixtureData ] = useState(null);
-    const [ curFavouriteFixtures, setCurFavouriteFixtures ] = useState([])
     const [ isFav, setIsfave ] = useState(false)
     const {user} = useUser()
-    // const { users_for_fixture } = favFixtures | null
 
     const toggleFav = async(fixID: any) => {
+        AddToFavs(fixture.id, user?.id, !isFav);
         setIsfave(!isFav);
-        console.log("Is working backend")
-        AddToFavs(fixture.id, user?.id, isFav);
-        console.log("Done working backend")
     }
 
     useEffect(() => {
         setFixtureData(fixture)
-        // favLogic(favFixtures?.users_for_fixture, user?.id)
-        // favFixtures && favFixtures.users_for_fixture.find((item: any) => item.user_id == user?.id)
         if(favFixtures) {
             let curFavFxtObject = favFixtures.users_for_fixture.find((item: any) => item.user_id == user?.id)
-            console.log("Current fav fixture object: ", curFavFxtObject)
+            setIsfave(curFavFxtObject?.is_fav)
         }
-    }, [])
-    
-    // console.log("The fixture: ", fixtureData)
-    // console.log("The userID: ", user)
-    // favFixtures && console.log("The current fav fixture data: ", favFixtures.users_for_fixture)
+    }, [user])
 
     if(fixtureData){
         return(
@@ -170,12 +132,12 @@ export const HighlightComp = ({ isActive, fixture, favFixtures }: { isActive: bo
                     }
                 </div>
                 <div className="league_btn_boxes">
-                    <button className="league_btn_bet"><p>1</p><p>0.7</p></button>
-                    <button className="league_btn_bet"><p>Draw</p><p>0.7</p></button>
-                    <button className="league_btn_bet"><p>2</p><p>0.7</p></button>
-                    <button className="league_btn_arrow">
+                    <Link href={"/football/?isBet=open"} className="league_btn_bet"><p>1</p><p>0.7</p></Link>
+                    <Link href={"?isBet=open"} className="league_btn_bet"><p>Draw</p><p>0.7</p></Link>
+                    <Link href={"?isBet=open"} className="league_btn_bet"><p>2</p><p>0.7</p></Link>
+                    <Link href={"?isBet=open"} className="league_btn_arrow">
                         <Image src={arrow_down} alt='arrow' style={{ width: "22px" }} />
-                    </button>
+                    </Link>
                 </div>
             </div>
         )

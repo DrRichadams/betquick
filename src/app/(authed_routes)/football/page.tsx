@@ -38,9 +38,10 @@ const  FootballPage = async () => {
         {
           data.data.map((fixture: any) => {
             // let fixtureFavs = favouriteFixtures.filter((item: any) => item.id == fixture.id)
-            let fixtureFavs = favouriteFixtures.find((item: any) => item.fixtureId == fixture.id)
+            let fixtureFavs: any = favouriteFixtures.find((item: any) => item.fixtureId == fixture.id)
             // console.log("The server fav data: ", fixtureFavs)
             return(
+              // <HighlightComp isActive={true} key={fixture.id} fixture={fixture} favFixtures = {fixtureFavs ? fixtureFavs.users_for_fixture:null} />
               <HighlightComp isActive={true} key={fixture.id} fixture={fixture} favFixtures = {fixtureFavs ? fixtureFavs:null} />
             )
           })
