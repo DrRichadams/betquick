@@ -7,10 +7,16 @@ import LiveEVentSurvivalPoolComp from "@/components/live_events/live_event_survi
 import MainBanner from "@/components/banner/main_banner";
 import Link from "next/link";
 import LiveTitle from "@/components/titles/live_title";
+import Modal from "react-modal";
+
+Modal.setAppElement("__className_b1da2a ");
 
 export default function Home() {
   return (
     <main className="main_container">
+      <Modal isOpen={true}>
+        <h1>HELLO IM MODAL</h1>
+      </Modal>
       <MainBanner />
       <div className="live_section_box">
         <LiveTitle show_all={true} />
