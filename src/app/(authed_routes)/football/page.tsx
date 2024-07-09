@@ -36,7 +36,7 @@ const  FootballPage = async () => {
 
       <GameSection section_name='live'>
         {
-          data.data.map((fixture: any) => {
+          data?.data.map((fixture: any) => {
             // let fixtureFavs = favouriteFixtures.filter((item: any) => item.id == fixture.id)
             let fixtureFavs: any = favouriteFixtures.find((item: any) => item.fixtureId == fixture.id)
             // console.log("The server fav data: ", fixtureFavs)

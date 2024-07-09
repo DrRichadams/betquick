@@ -8,6 +8,7 @@ import FeedbackComp from "@/components/feedback/feedback_box";
 import AuthModal from "@/modals/auth_modal";
 import { GlobalContextProvider } from "@/context/store";
 import { ClerkProvider } from "@clerk/nextjs";
+import ModalOverlay from "@/modals/modal_overlay";
 
 const montserrat = Montserrat({ subsets: ["latin"], variable: '--font-mont' });
 
@@ -24,12 +25,24 @@ export default async function RootLayout({
 
   // const myData = await GetData();
   // console.log("My data: ", myData)
+
+  const openModal = () => {
+    // setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    // setIsModalOpen(false);
+    console.log("I am modal and I am closed now")
+  };
   
   return (
     <ClerkProvider>
       <html lang="en">
         <body className={`${montserrat.className} body_container`}>
           <GlobalContextProvider>
+            <ModalOverlay isOpen={true}>
+                <h1>HEY, I'M SUPER MODAL</h1>
+            </ModalOverlay>
             <MainNav />
             {children}
             <FeedbackComp />
