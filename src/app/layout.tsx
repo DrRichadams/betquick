@@ -8,7 +8,8 @@ import FeedbackComp from "@/components/feedback/feedback_box";
 import AuthModal from "@/modals/auth_modal";
 import { GlobalContextProvider } from "@/context/store";
 import { ClerkProvider } from "@clerk/nextjs";
-import ModalOverlay from "@/modals/modal_overlay";
+import BetModalInitiator from "@/modals/bet_modal_initiator";
+import BettingModal from "@/modals/betting_modal";
 
 const montserrat = Montserrat({ subsets: ["latin"], variable: '--font-mont' });
 
@@ -40,9 +41,8 @@ export default async function RootLayout({
       <html lang="en">
         <body className={`${montserrat.className} body_container`}>
           <GlobalContextProvider>
-            <ModalOverlay isOpen={true}>
-                <h1>HEY, I'M SUPER MODAL</h1>
-            </ModalOverlay>
+            <BetModalInitiator />
+            <BettingModal />
             <MainNav />
             {children}
             <FeedbackComp />

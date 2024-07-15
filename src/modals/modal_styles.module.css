@@ -16,4 +16,23 @@
     padding: 20px;
     border-radius: 5px;
     position: relative;
+    width: 50%;
+    height: 90vh;
+  }
+
+  /* BET MODAL INITIATOR STYLES */
+
+  .betting_initiator {
+    width: 100px;
+    height: 100px;
+    /* background-color: #fff; */
+    position: fixed;
+    z-index: 2002;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms ease-in-out;
   }
