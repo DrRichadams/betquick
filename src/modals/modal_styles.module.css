@@ -13,11 +13,26 @@
   
   .modalContainer {
     background-color: white;
-    padding: 20px;
+    padding: 12px 20px;
     border-radius: 5px;
     position: relative;
     width: 50%;
     height: 90vh;
+  }
+
+  .bet_type_selector_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .bet_selector_btn {
+    /* background-color: green; */
+    min-width: fit-content;
+    padding: 7px 15px;
+    border-radius: 6px;
+    border: 2px solid #B1BF24;
   }
 
   /* BET MODAL INITIATOR STYLES */
