@@ -12,27 +12,28 @@
   }
   
   .modalContainer {
-    background-color: white;
-    padding: 12px 20px;
-    border-radius: 5px;
+    background-color: #1F1F1F;
+    overflow: hidden;
+    /* padding: 12px 20px; */
+    border-radius: 12px;
     position: relative;
-    width: 50%;
-    height: 90vh;
+    /* width: 50%; */
+    /* height: 90vh; */
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
+    max-height: 90vh;
   }
 
-  .bet_type_selector_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
+  .bet_slip_title_bar {
+    background: #B1BF24;
+    padding: 20px;
   }
 
-  .bet_selector_btn {
-    /* background-color: green; */
-    min-width: fit-content;
-    padding: 7px 15px;
-    border-radius: 6px;
-    border: 2px solid #B1BF24;
+  .bet_slip_selector_bar {
+    background-color: #262626;
+    /* padding: 15px; */
+    height: 50px;
   }
 
   /* BET MODAL INITIATOR STYLES */
