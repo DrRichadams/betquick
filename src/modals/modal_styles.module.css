@@ -23,17 +23,94 @@
     max-width: 450px;
     height: 100%;
     max-height: 90vh;
+    /* display: grid; */
   }
 
   .bet_slip_title_bar {
-    background: #B1BF24;
+    /* background: #B1BF24; */
+    /* background: linear-gradient(to right, #B1BF24, #FFC000); */
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* max-height: 65px; */
   }
 
   .bet_slip_selector_bar {
     background-color: #262626;
     /* padding: 15px; */
     height: 50px;
+  }
+  
+  .bet_slip_selector_bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .bet_slip_selector_btn {
+    /* background-color: red; */
+    border-bottom: 3px solid transparent;
+    font-size: .85rem;
+    transition: all 300ms ease-in-out;
+  }
+
+  .bet_slip_title_bar_left {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .bet_slip_title_bar_right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .bet_slip_title_bar_right_title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+  }
+
+  .bet_slip_title_share_toggle {
+    border: 2px solid #fff;
+    width: 65px;
+    height: 35px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+  }
+
+  .share_toggle_white {
+    background-color: #fff;
+    color: #CCCCCC;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bet_slip_place_bet_btn {
+    background-color: #B1BF24;
+    position: absolute;
+    bottom: 15px;
+    width: 95%;
+    height: 40px;
+    border-radius: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .85rem;
+    font-weight: 600;
+    color: #fff;
   }
 
   /* BET MODAL INITIATOR STYLES */
