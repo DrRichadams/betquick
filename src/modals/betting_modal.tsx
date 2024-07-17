@@ -75,14 +75,14 @@ const BettingModal = () => {
                             <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("multiple")} style={selectorBtnStyles(selected=="multiple")}>Multiple</button>
                             <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("system")} style={selectorBtnStyles(selected=="system")}>System</button>
                         </div>
-                        {
-                            selected == "single"?
-                            <Single />:
+                        <div className={styles.bet_slip_section_container}>
+                            {selected == "single"?
+                                <Single />:
                             selected == "multiple"?
-                            <Multiple />:
+                                <Multiple />:
                             selected == "system"?
-                            <System />: null
-                        }
+                                <System />: null}
+                        </div>
                         <button className={styles.bet_slip_place_bet_btn}>Place Bet</button>
                     </div>
                 </div>
@@ -92,11 +92,52 @@ const BettingModal = () => {
 
 export default BettingModal
 
+
+
+const FixtureComp = () => {
+    return(
+        <div className={styles.fixture_container}>
+            <div className={styles.fixture_accent}></div>
+            <div className={styles.fixture_title_bar}>
+                <div className={styles.fixture_title_home_team_box}>
+                    <div className={styles.icon}></div>
+                    <p className={styles.fixture_title_home_name}>Home (Manchester United)</p>
+                </div>
+                <div className={styles.close_icon}></div>
+            </div>
+            <div className={styles.fixture_team_listing}>
+                <div className={styles.fixture_team_box}>
+                    <div className={styles.jersey_icon}></div>
+                    <p className={styles.fixture_team_name}>Manchester United</p>
+                </div>
+                <div className={styles.fixture_team_box}>
+                    <div className={styles.jersey_icon}></div>
+                    <p className={styles.fixture_team_name}>Chelsea FC</p>
+                </div>
+            </div>
+            <div className={styles.fixture_details}>
+                <div className={styles.fixture_market}>
+                    1X2
+                </div>
+                <div className={styles.fixture_stats}>
+                    <div className={styles.fixture_odds}>3.19</div>
+                    <div className={styles.fixture_bet_amount_box}>
+                        <div className={styles.currency_sign}>$</div>
+                        <input type="text" className={styles.fixture_bet_amount} />
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
 const Single = () => {
     return(
         <div>
-            Single
-            <div className={styles.bet_slip_fixtures}></div>
+            <div className={styles.bet_slip_fixtures}>
+                <FixtureComp />
+            </div>
             <div className={styles.bet_slip_amount_placing}></div>
             <div className={styles.bet_slip_bet_details}></div>
         </div>
@@ -106,8 +147,9 @@ const Single = () => {
 const Multiple = () => {
     return(
         <div>
-            Multiple
-            <div className={styles.bet_slip_fixtures}></div>
+            <div className={styles.bet_slip_fixtures}>
+                <FixtureComp />
+            </div>
             <div className={styles.bet_slip_amount_placing}></div>
             <div className={styles.bet_slip_bet_details}></div>
         </div>
@@ -117,8 +159,9 @@ const Multiple = () => {
 const System = () => {
     return(
         <div>
-            SYSTEM
-            <div className={styles.bet_slip_fixtures}></div>
+            <div className={styles.bet_slip_fixtures}>
+                <FixtureComp />
+            </div>
             <div className={styles.bet_slip_amount_placing}></div>
             <div className={styles.bet_slip_bet_details}></div>
         </div>

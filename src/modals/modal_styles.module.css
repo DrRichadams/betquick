@@ -1,3 +1,23 @@
+/* BET MODAL INITIATOR STYLES */
+
+.betting_initiator {
+  width: 100px;
+  height: 100px;
+  /* background-color: #fff; */
+  position: fixed;
+  z-index: 2002;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms ease-in-out;
+}
+
+/* BETTING MODAL STYLING */
+
+
 .modalOverlay {
     position: fixed;
     top: 0;
@@ -29,7 +49,7 @@
   .bet_slip_title_bar {
     /* background: #B1BF24; */
     /* background: linear-gradient(to right, #B1BF24, #FFC000); */
-    padding: 20px;
+    padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -113,19 +133,30 @@
     color: #fff;
   }
 
-  /* BET MODAL INITIATOR STYLES */
-
-  .betting_initiator {
-    width: 100px;
-    height: 100px;
-    /* background-color: #fff; */
-    position: fixed;
-    z-index: 2002;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 500ms ease-in-out;
+  .bet_slip_section_container {
+    padding: 15px;
   }
+
+
+  /* BETTING FIXTURE STYLING */
+
+  .fixture_container {
+    background-color: #333333;
+    padding: 15px 20px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fixture_accent {
+    background-color: #B1BF24;
+    width: 8px;
+    height: 70%;
+    border-radius: 20px;
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  
