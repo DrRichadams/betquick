@@ -86,7 +86,7 @@ const BettingModal = () => {
                             selected == "system"?
                                 <System />: null}
                         </div>
-                        <button className={styles.bet_slip_place_bet_btn}>Place Bet</button>
+                        {/* <button className={styles.bet_slip_place_bet_btn}>Place Bet</button> */}
                     </div>
                 </div>
             )
@@ -98,12 +98,16 @@ export default BettingModal
 
 
 const FixtureComp = () => {
+    const [ betAmount, setBetAmount ]  = useState(0);
+    const handleAmountChange = (e: any) => {
+        setBetAmount(e.target.value)
+    }
     return(
         <div className={styles.fixture_container}>
             <div className={styles.fixture_accent}></div>
             <div className={styles.fixture_title_bar}>
                 <div className={styles.fixture_title_home_team_box}>
-                    <IoFootball size={23} />
+                    <IoFootball size={20} />
                     <p className={styles.fixture_title_home_name}>Home (Manchester United)</p>
                 </div>
                 <button className={styles.close_icon}><IoClose /></button>
@@ -127,7 +131,7 @@ const FixtureComp = () => {
                     <div className={styles.fixture_odds}>3.19</div>
                     <div className={styles.fixture_bet_amount_box}>
                         <div className={styles.currency_sign}>$</div>
-                        <input type="text" className={styles.fixture_bet_amount_input} />
+                        <input type="number" className={styles.fixture_bet_amount_input} value={betAmount} onChange={handleAmountChange} />
                     </div>
                 </div>
             </div>
@@ -141,9 +145,25 @@ const Single = () => {
         <div>
             <div className={styles.bet_slip_fixtures}>
                 <FixtureComp />
+                <FixtureComp />
+                <FixtureComp />
             </div>
             <div className={styles.bet_slip_amount_placing}></div>
-            <div className={styles.bet_slip_bet_details}></div>
+            <div className={styles.bet_slip_bet_details}>
+                <div className={styles.bet_slip_details_box}>
+                    <div className={styles.bet_slip_key}>TOTAL ODDS</div>
+                    <div className={styles.bet_slip_value}>6.38</div>
+                </div>
+                <div className={styles.bet_slip_details_box}>
+                    <div className={styles.bet_slip_key}>BET AMOUNT</div>
+                    <div className={styles.bet_slip_value}>$10,000</div>
+                </div>
+                <div className={styles.bet_slip_details_box}>
+                    <div className={styles.bet_slip_key}>POTENTIAL WIN</div>
+                    <div className={styles.bet_slip_value}>$70,000</div>
+                </div>
+            </div>
+            <button className={styles.bet_slip_place_bet_btn}>Place Bet</button>
         </div>
     )
 }
