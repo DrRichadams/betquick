@@ -19,270 +19,286 @@
 
 
 .modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2001;
-  }
-  
-  .modalContainer {
-    background-color: #1F1F1F;
-    overflow: hidden;
-    /* padding: 12px 20px; */
-    border-radius: 12px;
-    position: relative;
-    /* width: 50%; */
-    /* height: 90vh; */
-    width: 100%;
-    max-width: 450px;
-    height: 100%;
-    max-height: 90vh;
-    /* display: grid; */
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2001;
+}
 
-  .bet_slip_title_bar {
-    /* background: #B1BF24; */
-    /* background: linear-gradient(to right, #B1BF24, #FFC000); */
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* max-height: 65px; */
-  }
+.modalContainer {
+  background-color: #1F1F1F;
+  overflow: hidden;
+  /* padding: 12px 20px; */
+  border-radius: 12px;
+  position: relative;
+  /* width: 50%; */
+  /* height: 90vh; */
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  max-height: 90vh;
+  /* display: grid; */
+}
 
-  .bet_slip_selector_bar {
-    background-color: #262626;
-    /* padding: 15px; */
-    height: 50px;
-  }
-  
-  .bet_slip_selector_bar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+.bet_slip_title_bar {
+  /* background: #B1BF24; */
+  /* background: linear-gradient(to right, #B1BF24, #FFC000); */
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* max-height: 65px; */
+}
 
-  .bet_slip_selector_btn {
-    /* background-color: red; */
-    border-bottom: 3px solid transparent;
-    font-size: .85rem;
-    transition: all 300ms ease-in-out;
-  }
+.bet_slip_selector_bar {
+  background-color: #262626;
+  /* padding: 15px; */
+  height: 50px;
+}
 
-  .bet_slip_title_bar_left {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
+.bet_slip_selector_bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
-  .bet_slip_title_bar_right {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
+.bet_slip_selector_btn {
+  /* background-color: red; */
+  border-bottom: 3px solid transparent;
+  font-size: .85rem;
+  transition: all 300ms ease-in-out;
+}
 
-  .bet_slip_title_bar_right_title {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #fff;
-  }
+.bet_slip_title_bar_left {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
-  .bet_slip_title_share_toggle {
-    border: 2px solid #fff;
-    width: 65px;
-    height: 35px;
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    padding: 0 2px;
-    cursor: pointer;
-    transition: all 300ms ease-in-out;
-  }
+.bet_slip_title_bar_right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
-  .share_toggle_white {
-    background-color: #fff;
-    color: #CCCCCC;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.bet_slip_title_bar_right_title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+}
 
-  .bet_slip_place_bet_btn {
-    background-color: #B1BF24;
-    position: absolute;
-    bottom: 15px;
-    width: 95%;
-    height: 40px;
-    border-radius: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: .85rem;
-    font-weight: 600;
-    color: #fff;
-  }
+.bet_slip_title_share_toggle {
+  border: 2px solid #fff;
+  width: 65px;
+  height: 35px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
 
-  .bet_slip_section_container {
-    padding: 15px;
-  }
+.share_toggle_white {
+  background-color: #fff;
+  color: #CCCCCC;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bet_slip_place_bet_btn {
+  background-color: #B1BF24;
+  position: absolute;
+  bottom: 15px;
+  width: 95%;
+  height: 40px;
+  border-radius: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: .85rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.bet_slip_section_container {
+  padding: 15px;
+}
 
 
-  /* BETTING FIXTURE STYLING */
+/* BETTING FIXTURE STYLING */
 
-  .bet_slip_fixtures {
-    background-color: red;
-    height: 240px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    overflow: scroll;
-  }
+.bet_slip_fixtures {
+  /* background-color: red; */
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding: 0 12px;
+}
 
-  .fixture_container {
-    background-color: #333333;
-    padding: 10px 15px;
-    border-radius: 12px;
-    position: relative;
-    overflow: hidden;
-    min-height: 96px;
-  }
+.bet_slip_fixtures::-webkit-scrollbar {
+  width: 1px;
+}
 
-  .fixture_accent {
-    background-color: #B1BF24;
-    width: 8px;
-    height: 70%;
-    border-radius: 20px;
-    position: absolute;
-    left: -4px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+.bet_slip_fixtures::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  border-radius: 10px;
+}
 
-  .fixture_title_home_team_box {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #fff;
-  }
+.bet_slip_fixtures::-webkit-scrollbar-thumb {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); */
+  border-radius: 10px;
+}
 
-  .fixture_title_home_name {
-    font-size: .8rem;
-  }
+.fixture_container {
+  background-color: #333333;
+  padding: 10px 15px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  min-height: 96px;
+}
 
-  .fixture_title_bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.fixture_accent {
+  background-color: #B1BF24;
+  width: 8px;
+  height: 70%;
+  border-radius: 20px;
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-  .close_icon {
-    color: #fff;
-  }
+.fixture_title_home_team_box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+}
 
-  .fixture_team_listing {
-    color: #808080;
-    display: flex;
-    align-items: center;
-    font-size: .82rem;
-    gap: 8px;
-    margin-bottom: 6px;
-  }
+.fixture_title_home_name {
+  font-size: .8rem;
+}
 
-  .fixture_team_box {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-  }
+.fixture_title_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .fixture_details {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* gap: 6px; */
-  }
+.close_icon {
+  color: #fff;
+}
 
-  .fixture_stats {
-    display: flex;
-    align-items: center;
-    /* justify-content: space-between; */
-    gap: 6px;
-  }
+.fixture_team_listing {
+  color: #808080;
+  display: flex;
+  align-items: center;
+  font-size: .82rem;
+  gap: 8px;
+  margin-bottom: 6px;
+}
 
-  .fixture_bet_amount_box {
-    display: flex;
-    align-items: center;
-  }
+.fixture_team_box {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
 
-  .fixture_market {
-    color: #fff;
-    font-size: .8rem;
-  }
+.fixture_details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 6px; */
+}
 
-  .fixture_odds {
-    color: #fff;
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
+.fixture_stats {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 6px;
+}
 
-  .currency_sign {
-    background-color: #B1BF24;
-    padding: 0 8px;   
-    /* width: 30px; */
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px 0 0 6px;
-    color: #fff;
-    font-size: .85rem;
-    font-weight: 600;
-  }
-  
-  .fixture_bet_amount_input {
-    background: #1A1A1A;
-    /* min-width: 90px;
+.fixture_bet_amount_box {
+  display: flex;
+  align-items: center;
+}
+
+.fixture_market {
+  color: #fff;
+  font-size: .8rem;
+}
+
+.fixture_odds {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.currency_sign {
+  background-color: #B1BF24;
+  padding: 0 8px;
+  /* width: 30px; */
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px 0 0 6px;
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.fixture_bet_amount_input {
+  background: #1A1A1A;
+  /* min-width: 90px;
     max-width: fit-content; */
-    height: 30px;
-    width: 80px;
-    padding: 5px;
-    border-radius: 0 6px 6px 0;
-    outline: none;
-    border: none;
-    color: #fff;
-    font-size: .85rem;
-  }
+  height: 30px;
+  width: 80px;
+  padding: 5px;
+  border-radius: 0 6px 6px 0;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: .85rem;
+}
 
-  .bet_slip_bet_details {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-top: 15px;
-  }
+.bet_slip_bet_details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 15px;
+}
 
-  .bet_slip_details_box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
+.bet_slip_details_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .bet_slip_key {
-    color: #808080;
-    font-size: .85rem;
-  }
 
-  .bet_slip_value {
-    color: #FFFFFF;
-    font-size: .85rem;
-  }
+.bet_slip_key {
+  color: #808080;
+  font-size: .85rem;
+}
+
+.bet_slip_value {
+  color: #FFFFFF;
+  font-size: .85rem;
+}
