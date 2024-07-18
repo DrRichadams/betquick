@@ -142,7 +142,7 @@
 
   .fixture_container {
     background-color: #333333;
-    padding: 15px 20px;
+    padding: 15px;
     border-radius: 12px;
     position: relative;
     overflow: hidden;
@@ -158,5 +158,96 @@
     top: 50%;
     transform: translateY(-50%);
   }
+
+  .fixture_title_home_team_box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+  }
+
+  .fixture_title_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .close_icon {
+    color: #fff;
+  }
+
+  .fixture_team_listing {
+    color: #808080;
+    display: flex;
+    align-items: center;
+    font-size: .82rem;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .fixture_team_box {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .fixture_details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 6px; */
+  }
+
+  .fixture_stats {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 6px;
+  }
+
+  .fixture_bet_amount_box {
+    display: flex;
+    align-items: center;
+  }
+
+  .fixture_market {
+    color: #fff;
+    font-size: .8rem;
+  }
+
+  .fixture_odds {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .currency_sign {
+    background-color: #B1BF24;
+    padding: 0 8px;   
+    /* width: 30px; */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px 0 0 6px;
+    color: #fff;
+    font-size: .85rem;
+    font-weight: 600;
+  }
+  
+  .fixture_bet_amount_input {
+    background: #1A1A1A;
+    /* min-width: 90px;
+    max-width: fit-content; */
+    height: 30px;
+    width: 80px;
+    padding: 5px;
+    border-radius: 0 6px 6px 0;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: .85rem;
+  }
+  
 
   

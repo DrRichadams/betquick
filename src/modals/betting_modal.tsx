@@ -7,6 +7,9 @@ import { TbTicket } from "react-icons/tb";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { RiErrorWarningLine } from "react-icons/ri"
 import { IoCopy } from "react-icons/io5";
+import { VscJersey } from "react-icons/vsc";
+import { IoFootball } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 
 
 const BettingModal = () => {
@@ -100,18 +103,19 @@ const FixtureComp = () => {
             <div className={styles.fixture_accent}></div>
             <div className={styles.fixture_title_bar}>
                 <div className={styles.fixture_title_home_team_box}>
-                    <div className={styles.icon}></div>
+                    <IoFootball size={23} />
                     <p className={styles.fixture_title_home_name}>Home (Manchester United)</p>
                 </div>
-                <div className={styles.close_icon}></div>
+                <button className={styles.close_icon}><IoClose /></button>
             </div>
             <div className={styles.fixture_team_listing}>
                 <div className={styles.fixture_team_box}>
-                    <div className={styles.jersey_icon}></div>
+                    <VscJersey />
                     <p className={styles.fixture_team_name}>Manchester United</p>
                 </div>
+                <div className={styles.fixture_team_V}>V</div>
                 <div className={styles.fixture_team_box}>
-                    <div className={styles.jersey_icon}></div>
+                    <VscJersey />
                     <p className={styles.fixture_team_name}>Chelsea FC</p>
                 </div>
             </div>
@@ -123,7 +127,7 @@ const FixtureComp = () => {
                     <div className={styles.fixture_odds}>3.19</div>
                     <div className={styles.fixture_bet_amount_box}>
                         <div className={styles.currency_sign}>$</div>
-                        <input type="text" className={styles.fixture_bet_amount} />
+                        <input type="text" className={styles.fixture_bet_amount_input} />
                     </div>
                 </div>
             </div>
