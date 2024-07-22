@@ -18,7 +18,7 @@ export default function Home() {
       <div className="live_section_box">
         <LiveTitle show_all={true} />
         <div className="live_section_events">
-          <HighlightComp isActive={true} />
+          {/* <HighlightComp isActive={true} /> */}
           <LiveEVentSurvivalPoolComp />
         </div>
       </div>
