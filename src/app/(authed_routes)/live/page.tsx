@@ -25,7 +25,7 @@ function LivePage() {
       <div className="lives_highlights">
         {
           new Array(11).fill(1).map((_, i) => (
-            <HighlightComp isActive={true} key={i} />
+            // <HighlightComp isActive={true} key={i} />
           ))
         }
       </div>
