@@ -14,8 +14,8 @@ const Highlights = () => {
         {/* <LeagueSelector show_all={true} /> */}
         <LeagueSelectorV2 />
         <div className="actual_highlights_container">
-            <HighlightComp isActive={false} />
-            <HighlightComp isActive={false} />
+            {/* <HighlightComp isActive={false} />
+            <HighlightComp isActive={false} /> */}
         </div>
     </div>
   )
