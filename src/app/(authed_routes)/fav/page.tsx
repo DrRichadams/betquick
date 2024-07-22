@@ -56,10 +56,10 @@ function FavPage() {
 const FootballListing = () => {
   return(
     <div className="fav_listing_box">
+      {/* <HighlightComp isActive={false} />
       <HighlightComp isActive={false} />
       <HighlightComp isActive={false} />
-      <HighlightComp isActive={false} />
-      <HighlightComp isActive={false} />
+      <HighlightComp isActive={false} /> */}
     </div>
   )
 }
