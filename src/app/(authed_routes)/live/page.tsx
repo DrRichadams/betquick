@@ -23,11 +23,11 @@ function LivePage() {
       </div>
       <LeagueSelectorV2 />
       <div className="lives_highlights">
-        {
+        {/* {
           new Array(11).fill(1).map((_, i) => (
-            // <HighlightComp isActive={true} key={i} />
+            <HighlightComp isActive={true} key={i} />
           ))
-        }
+        } */}
       </div>
       <p className='live_bottom_story'>
         While we strive to ensure the accuracy of the data on our site, please note that it is provided 
