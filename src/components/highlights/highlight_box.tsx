@@ -67,7 +67,7 @@ async function AddToFavs(fixID: any, userID: any, isFav: boolean){
 
 // MAIN HIGHLLIGHT COMPONENT FUNCTION
 
-export const HighlightComp = ({ isActive, fixture, favFixtures }: { isActive: boolean, fixture: any, favFixtures: any | null }) => {
+export const HighlightComp = ({ isActive, fixture, favFixtures }: { isActive: boolean|false, fixture: any, favFixtures: any | null }) => {
     const [ fixtureData, setFixtureData ] = useState(null);
     const [ isFav, setIsfave ] = useState(false)
     const {user} = useUser()
