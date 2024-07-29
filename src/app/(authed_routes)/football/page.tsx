@@ -9,10 +9,15 @@ import { db } from '@/app/firebase/config';
 
 const  FootballPage = async () => {
 
-  const fixtures = await fetch("http://localhost:3000/api/fixtures", { cache: "no-store" });
-  const {data} = await fixtures.json()
+  // const fixtures = await fetch("http://localhost:3000/api/fixtures", { cache: "no-store" });
+  // const {data} = await fixtures.json()
 
-  // console.log("returned datased: ",  data.data)
+  const fixturesData = await fetch(`https://api.sportmonks.com/v3/football/fixtures?api_token=${process.env.SPORTMONKS_API_KEY}&includes=league;participants`);
+
+  const fixtures = await fixturesData.json()
+
+
+  // console.log("fixtures from api: ",  fixtures)
 
   let favouriteFixtures: any = [];
   const query_str = query(collection(db, "favourite_fixtures"));
@@ -22,7 +27,7 @@ const  FootballPage = async () => {
     favouriteFixtures.push(doc.data())
   });
 
-  console.log("favourite Fixtures: ", favouriteFixtures)
+  // console.log("favourite Fixtures: ", favouriteFixtures)
 
   return (
     <div className="football_page_container">
@@ -36,7 +41,7 @@ const  FootballPage = async () => {
 
       <GameSection section_name='live'>
         {
-          data?.data?.map((fixture: any) => {
+          fixtures?.data?.map((fixture: any) => {
             // let fixtureFavs = favouriteFixtures.filter((item: any) => item.id == fixture.id)
             let fixtureFavs: any = favouriteFixtures.find((item: any) => item.fixtureId == fixture.id)
             // console.log("The server fav data: ", fixtureFavs)

@@ -13,7 +13,7 @@
 }
 
 
-* { 
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -72,11 +72,9 @@ body {
 
 .auth_modal {
   /* background-color: black; */
-  background: linear-gradient(
-    to right bottom,
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0.15)
-  );
+  background: linear-gradient(to right bottom,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15));
   backdrop-filter: blur(.2rem);
   position: fixed;
   width: 100%;
@@ -130,4 +128,16 @@ body {
   body {
     padding: 0 10px;
   }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

@@ -97,8 +97,8 @@ export default BettingModal
 
 
 
-const FixtureComp = () => {
-    const [ betAmount, setBetAmount ]  = useState(0);
+const FixtureComp = ({showCurrency}: { showCurrency: boolean }) => {
+    const [ betAmount, setBetAmount ]  = useState();
     const handleAmountChange = (e: any) => {
         setBetAmount(e.target.value)
     }
@@ -129,10 +129,12 @@ const FixtureComp = () => {
                 </div>
                 <div className={styles.fixture_stats}>
                     <div className={styles.fixture_odds}>3.19</div>
+                    { showCurrency ? 
                     <div className={styles.fixture_bet_amount_box}>
                         <div className={styles.currency_sign}>$</div>
                         <input type="number" className={styles.fixture_bet_amount_input} value={betAmount} onChange={handleAmountChange} />
                     </div>
+                    : null }
                 </div>
             </div>
         </div>
@@ -144,11 +146,57 @@ const Single = () => {
     return(
         <div>
             <div className={styles.bet_slip_fixtures}>
-                <FixtureComp />
-                <FixtureComp />
-                <FixtureComp />
+                <FixtureComp showCurrency={true} />
+                <FixtureComp showCurrency={true} />
+                {/* <FixtureComp /> */}
             </div>
-            <div className={styles.bet_slip_amount_placing}></div>
+            <div className={styles.bet_slip_amount_placing}>
+                <button>$5</button>
+                <button>$20</button>
+                <button>$100</button>
+                <button>$200</button>
+                <button>$300</button>
+                <button>$400</button>
+            </div>
+            <div className={styles.bet_slip_bet_details}>
+                {/* <div className={styles.bet_slip_details_box}>
+                    <div className={styles.bet_slip_key}>TOTAL ODDS</div>
+                    <div className={styles.bet_slip_value}>6.38</div>
+                </div> */}
+                <div className={styles.bet_slip_details_box}>
+                    <div className={styles.bet_slip_key}>BET AMOUNT</div>
+                    <div className={styles.bet_slip_value}>$10,000</div>
+                </div>
+                <div className={styles.bet_slip_details_box}>
+                    <div className={styles.bet_slip_key}>POTENTIAL WIN</div>
+                    <div className={styles.bet_slip_value}>$70,000</div>
+                </div>
+            </div>
+            <button className={styles.bet_slip_place_bet_btn}>Place Bet</button>
+        </div>
+    )
+}
+
+const Multiple = () => {
+    return(
+        <div>
+            <div className={styles.bet_slip_fixtures}>
+                <FixtureComp showCurrency={false} />
+                <FixtureComp showCurrency={false} />
+                {/* <FixtureComp /> */}
+            </div>
+            <div className={styles.bet_slip_amount_placing}>
+            <div className={styles.fixture_bet_amount_box_second}>
+                <div className={styles.currency_sign_second}>$</div>
+                <input type="number" className={styles.fixture_bet_amount_input_second} />
+            </div>
+                <div className={styles.amount_buttons}>
+                    <button>$100</button>
+                    <button>$200</button>
+                    <button>$300</button>
+                    <button>$400</button>
+                </div>
+            </div>
             <div className={styles.bet_slip_bet_details}>
                 <div className={styles.bet_slip_details_box}>
                     <div className={styles.bet_slip_key}>TOTAL ODDS</div>
@@ -168,26 +216,64 @@ const Single = () => {
     )
 }
 
-const Multiple = () => {
-    return(
-        <div>
-            <div className={styles.bet_slip_fixtures}>
-                <FixtureComp />
-            </div>
-            <div className={styles.bet_slip_amount_placing}></div>
-            <div className={styles.bet_slip_bet_details}></div>
-        </div>
-    )
-}
-
 const System = () => {
     return(
         <div>
             <div className={styles.bet_slip_fixtures}>
-                <FixtureComp />
+                <FixtureComp showCurrency={false} />
+                <FixtureComp showCurrency={false} />
+                {/* <FixtureComp /> */}
             </div>
-            <div className={styles.bet_slip_amount_placing}></div>
-            <div className={styles.bet_slip_bet_details}></div>
+            <div className={styles.bet_slip_select_system}>
+                <p className={styles.bet_slip_system_title}>Systems</p>
+                <div className={styles.bet_slip_system_types}>
+                    <div className={styles.bet_slip_system_type}>
+                        <div className={styles.bet_slip_system_type_select}>
+                            <div></div>
+                        </div>
+                        <p>Doubles</p>
+                    </div>
+                    <div className={styles.bet_slip_system_type}>
+                        <div className={styles.bet_slip_system_type_select}>
+                            <div></div>
+                        </div>
+                        <p>Triples</p>
+                    </div>
+                    <div className={styles.bet_slip_system_type}>
+                        <div className={styles.bet_slip_system_type_select}>
+                            <div></div>
+                        </div>
+                        <p>Trixie</p>
+                    </div>
+                </div>
+            </div>
+            <div className={styles.bet_slip_amount_placing}>
+            <div className={styles.fixture_bet_amount_box_second}>
+                <div className={styles.currency_sign_second}>$</div>
+                <input type="number" className={styles.fixture_bet_amount_input_second} />
+            </div>
+                <div className={styles.amount_buttons}>
+                    <button>$100</button>
+                    <button>$200</button>
+                    <button>$300</button>
+                    <button>$400</button>
+                </div>
+            </div>
+            <div className={styles.bet_slip_bet_details}>
+                <div className={styles.bet_slip_details_box}>
+                    <div className={styles.bet_slip_key}>TOTAL ODDS</div>
+                    <div className={styles.bet_slip_value}>6.38</div>
+                </div>
+                <div className={styles.bet_slip_details_box}>
+                    <div className={styles.bet_slip_key}>BET AMOUNT</div>
+                    <div className={styles.bet_slip_value}>$10,000</div>
+                </div>
+                <div className={styles.bet_slip_details_box}>
+                    <div className={styles.bet_slip_key}>POTENTIAL WIN</div>
+                    <div className={styles.bet_slip_value}>$70,000</div>
+                </div>
+            </div>
+            <button className={styles.bet_slip_place_bet_btn}>Place Bet</button>
         </div>
     )
 }

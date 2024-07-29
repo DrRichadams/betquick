@@ -142,13 +142,14 @@
 
 .bet_slip_fixtures {
   /* background-color: red; */
-  height: 220px;
+  /* height: 220px; */
+  height: 205px;
   display: flex;
   flex-direction: column;
   gap: 6px;
   overflow: scroll;
   overflow-x: hidden;
-  padding: 0 12px;
+  /* padding: 0 12px; */
 }
 
 .bet_slip_fixtures::-webkit-scrollbar {
@@ -282,7 +283,7 @@
 .bet_slip_bet_details {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   margin-top: 15px;
 }
 
@@ -295,10 +296,92 @@
 
 .bet_slip_key {
   color: #808080;
-  font-size: .85rem;
+  font-size: .8rem;
 }
 
 .bet_slip_value {
   color: #FFFFFF;
-  font-size: .85rem;
+  font-size: .8rem;
+}
+
+.bet_slip_amount_placing {
+  display: flex;
+  /* padding: 0 12px; */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bet_slip_amount_placing button {
+  background-color: #333333;
+  border: 0.03rem solid #4D4D4D;
+  color: #fff;
+  width: fit-content;
+  min-width: 50px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: .7rem;
+}
+
+.amount_buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.fixture_bet_amount_box_second {
+  display: flex;
+  align-items: center;
+}
+
+.currency_sign_second {
+  background-color: #B1BF24;
+  color: #fff;
+  width: fit-content;
+  padding: 8px 15px;
+  border-radius: 8px 0 0 8px;
+  font-size: .8rem;
+}
+
+.fixture_bet_amount_input_second {
+  background-color: #1A1A1A;
+  color: #fff;
+  width: fit-content;
+  max-width: 85px;
+  padding: 8px 12px;
+  border-radius: 0 8px 8px 0;
+  font-size: .77rem;
+  border: none;
+  outline: none;
+}
+
+.bet_slip_select_system {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.bet_slip_system_types {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bet_slip_system_type {
+  display: flex;
+  align-items: center;
+  /* padding: 6px 0; */
+  gap: px;
+  color: #808080;
+  font-size: .8rem;
+}
+
+.bet_slip_system_type_select {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #808080;
+}
+
+.bet_slip_system_title {
+  color: #fff;
 }
