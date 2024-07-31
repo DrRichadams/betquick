@@ -17,7 +17,9 @@ const BettingModal = () => {
     const [ betSharing, setBetSharing ] = useState(false);
     const searchParams = useSearchParams()
     const isBetting = searchParams.get("isBetting")
+    const betMode = searchParams.get("betMode")
     const router = useRouter()
+    const [ showModeOption, setShowModeOption ] = useState(false);
 
     const pathname = usePathname();
 
@@ -59,7 +61,13 @@ const BettingModal = () => {
                 <div className={styles.modalOverlay} onClick={handleModalClose}>
                     <div className={styles.modalContainer} onClick={(e) => e.stopPropagation()}>
                         <div className={styles.bet_slip_title_bar} style={betSharingTitleBarStyles()}>
-                            <div className={styles.bet_slip_title_bar_left}><TbTicket size={20} /><p>BET SLIP</p><IoMdArrowDropdown size={20} /></div>
+                            <button className={styles.bet_slip_title_bar_left} onClick={() => setShowModeOption(!showModeOption)}><TbTicket size={20} /><p>{betMode=="betSlip" ? "BET SLIP":"COPY BETTING"}</p><IoMdArrowDropdown size={20} /></button>
+                            <div className={styles.betModeSelector} style={{ display: showModeOption ? "block":"none" }}>
+                                { betMode == "betSlip" ?
+                                    <button>Copy Betting</button>:
+                                    <button>Bet Slip</button>
+                                }
+                            </div>
                             <div className={styles.bet_slip_title_bar_right}>
                                 <div className={styles.bet_slip_title_bar_right_title}>
                                     <RiErrorWarningLine />
@@ -73,19 +81,26 @@ const BettingModal = () => {
                             </div>
                             
                         </div>
-                        <div className={styles.bet_slip_selector_bar}>
-                            <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("single")} style={selectorBtnStyles(selected=="single")}>Single</button>
-                            <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("multiple")} style={selectorBtnStyles(selected=="multiple")}>Multiple</button>
-                            <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("system")} style={selectorBtnStyles(selected=="system")}>System</button>
-                        </div>
-                        <div className={styles.bet_slip_section_container}>
-                            {selected == "single"?
-                                <Single />:
-                            selected == "multiple"?
-                                <Multiple />:
-                            selected == "system"?
-                                <System />: null}
-                        </div>
+                        {betMode == "betSlip" ? 
+                            <>
+                                <div className={styles.bet_slip_selector_bar}>
+                                    <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("single")} style={selectorBtnStyles(selected=="single")}>Single</button>
+                                    <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("multiple")} style={selectorBtnStyles(selected=="multiple")}>Multiple</button>
+                                    <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("system")} style={selectorBtnStyles(selected=="system")}>System</button>
+                                </div>
+                                <div className={styles.bet_slip_section_container}>
+                                    {selected == "single"?
+                                        <Single />:
+                                    selected == "multiple"?
+                                        <Multiple />:
+                                    selected == "system"?
+                                        <System />: null}
+                                </div>
+                            </> :
+                            <div>
+                                LOADING BETTING CODE
+                            </div>
+                        }
                         {/* <button className={styles.bet_slip_place_bet_btn}>Place Bet</button> */}
                     </div>
                 </div>
@@ -150,14 +165,14 @@ const Single = () => {
                 <FixtureComp showCurrency={true} />
                 {/* <FixtureComp /> */}
             </div>
-            <div className={styles.bet_slip_amount_placing}>
+            {/* <div className={styles.bet_slip_amount_placing}>
                 <button>$5</button>
                 <button>$20</button>
                 <button>$100</button>
                 <button>$200</button>
                 <button>$300</button>
                 <button>$400</button>
-            </div>
+            </div> */}
             <div className={styles.bet_slip_bet_details}>
                 {/* <div className={styles.bet_slip_details_box}>
                     <div className={styles.bet_slip_key}>TOTAL ODDS</div>
