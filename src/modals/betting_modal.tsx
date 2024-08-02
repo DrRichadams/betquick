@@ -56,6 +56,30 @@ const BettingModal = () => {
         return { backgroundColor: "#fff", color: "#CCCCCC"};
     }
 
+    const toggleCopybetting = () => {
+        setShowModeOption(false)
+        const queryString = new URLSearchParams({
+          isBetting: 'open',
+          betMode: "copyBetting",
+        }).toString();
+      
+        router.push(`${pathname}?${queryString}`);
+      
+      }
+    const toggleBetSlip = () => {
+        setShowModeOption(false)
+        const queryString = new URLSearchParams({
+          isBetting: 'open',
+          betMode: "betSlip",
+          betSharing: "nosharing",
+          betMarket: "single",
+          betSystemsMode: "doubles"
+        }).toString();
+      
+        router.push(`${pathname}?${queryString}`);
+      
+      }
+
         if(isBetting && isBetting=="open") {
             return (
                 <div className={styles.modalOverlay} onClick={handleModalClose}>
@@ -64,21 +88,24 @@ const BettingModal = () => {
                             <button className={styles.bet_slip_title_bar_left} onClick={() => setShowModeOption(!showModeOption)}><TbTicket size={20} /><p>{betMode=="betSlip" ? "BET SLIP":"COPY BETTING"}</p><IoMdArrowDropdown size={20} /></button>
                             <div className={styles.betModeSelector} style={{ display: showModeOption ? "block":"none" }}>
                                 { betMode == "betSlip" ?
-                                    <button>Copy Betting</button>:
-                                    <button>Bet Slip</button>
+                                    <button onClick={() => toggleCopybetting()}>Copy Betting</button>:
+                                    <button onClick={() => toggleBetSlip()}>Bet Slip</button>
                                 }
                             </div>
-                            <div className={styles.bet_slip_title_bar_right}>
-                                <div className={styles.bet_slip_title_bar_right_title}>
-                                    <RiErrorWarningLine />
-                                    <p>Bet Sharing</p>
-                                </div>
-                                <div className={styles.bet_slip_title_share_toggle} onClick={toggleBetSharing} style={betSharingToggleElipse()}>
-                                    <div className={styles.share_toggle_white} style={betSharingToggleCircle()}>
-                                        <IoCopy />
+                            {
+                                betMode == "betSlip" ?
+                                <div className={styles.bet_slip_title_bar_right}>
+                                    <div className={styles.bet_slip_title_bar_right_title}>
+                                        <RiErrorWarningLine />
+                                        <p>Bet Sharing</p>
                                     </div>
-                                </div>
-                            </div>
+                                    <div className={styles.bet_slip_title_share_toggle} onClick={toggleBetSharing} style={betSharingToggleElipse()}>
+                                        <div className={styles.share_toggle_white} style={betSharingToggleCircle()}>
+                                            <IoCopy />
+                                        </div>
+                                    </div>
+                                </div>: null
+                            }
                             
                         </div>
                         {betMode == "betSlip" ? 
@@ -98,7 +125,13 @@ const BettingModal = () => {
                                 </div>
                             </> :
                             <div>
-                                LOADING BETTING CODE
+                                <form className={styles.copy_betting_container} onSubmit={(e)=>{ e.preventDefault() }}>
+                                    <div className={styles.copy_bet_input_box}>
+                                        <p>Booking Code:</p>
+                                        <input type="text" placeholder='Paste/Type your code here' />
+                                    </div>
+                                    <button className={styles.copy_betting_btn}>Load Code</button>
+                                </form>
                             </div>
                         }
                         {/* <button className={styles.bet_slip_place_bet_btn}>Place Bet</button> */}

@@ -407,3 +407,43 @@
 .bet_slip_system_title {
   color: #fff;
 }
+
+.copy_betting_container {
+  background-color: #1F1F1F;
+  padding: 12px;
+}
+
+.copy_bet_input_box {
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: .8rem;
+}
+
+.copy_bet_input_box p {
+  color: #fff;
+  min-width: fit-content;
+}
+
+.copy_bet_input_box input {
+  background-color: transparent;
+  text-align: right;
+  color: #fff;
+  border: none;
+  outline: none;
+  width: 80%;
+  padding: 8px;
+}
+
+.copy_betting_btn {
+  background-color: #B1BF24;
+  font-size: .85rem;
+  color: #fff;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
