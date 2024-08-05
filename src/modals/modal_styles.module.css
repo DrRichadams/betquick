@@ -392,7 +392,7 @@
   display: flex;
   align-items: center;
   /* padding: 6px 0; */
-  gap: px;
+  gap: 5px;
   color: #808080;
   font-size: .8rem;
 }

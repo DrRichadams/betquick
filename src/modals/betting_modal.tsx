@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import styles from "./modal_styles.module.css";
 import { TbTicket } from "react-icons/tb";
@@ -18,6 +18,9 @@ const BettingModal = () => {
     const searchParams = useSearchParams()
     const isBetting = searchParams.get("isBetting")
     const betMode = searchParams.get("betMode")
+    const betMarket = searchParams.get("betMarket")
+    const betSharingVal = searchParams.get("betSharing")
+    const betSystemsMode = searchParams.get("betSystemsMode")
     const router = useRouter()
     const [ showModeOption, setShowModeOption ] = useState(false);
 
@@ -30,7 +33,17 @@ const BettingModal = () => {
 
     const toggleBetSharing = () => setBetSharing(!betSharing);
 
-    const handleModeChange = (mode: string) => { setSelected(mode) }
+    const handleModeChange = (market: string) => { 
+            const queryString = new URLSearchParams({
+              isBetting: `${isBetting}`,
+              betMode: `${betMode}`,
+              betSharing: `${betSharingVal}`,
+              betMarket: market,
+              betSystemsMode: `${betSystemsMode}`
+            }).toString();
+          
+            router.push(`${pathname}?${queryString}`); 
+     }
 
     const betSharingTitleBarStyles = () => {
         if(betSharing) return {
@@ -111,16 +124,16 @@ const BettingModal = () => {
                         {betMode == "betSlip" ? 
                             <>
                                 <div className={styles.bet_slip_selector_bar}>
-                                    <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("single")} style={selectorBtnStyles(selected=="single")}>Single</button>
-                                    <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("multiple")} style={selectorBtnStyles(selected=="multiple")}>Multiple</button>
-                                    <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("system")} style={selectorBtnStyles(selected=="system")}>System</button>
+                                    <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("single")} style={selectorBtnStyles(betMarket=="single")}>Single</button>
+                                    <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("multiple")} style={selectorBtnStyles(betMarket=="multiple")}>Multiple</button>
+                                    <button className={styles.bet_slip_selector_btn} onClick={() => handleModeChange("system")} style={selectorBtnStyles(betMarket=="system")}>System</button>
                                 </div>
                                 <div className={styles.bet_slip_section_container}>
-                                    {selected == "single"?
+                                        {betMarket == "single"?
                                         <Single />:
-                                    selected == "multiple"?
+                                        betMarket == "multiple"?
                                         <Multiple />:
-                                    selected == "system"?
+                                        betMarket == "system"?
                                         <System />: null}
                                 </div>
                             </> :
