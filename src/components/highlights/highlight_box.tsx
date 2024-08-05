@@ -132,12 +132,12 @@ export const HighlightComp = ({ isActive, fixture, favFixtures }: { isActive: bo
                     }
                 </div>
                 <div className="league_btn_boxes">
-                    <Link href={"/football/?isBet=open"} className="league_btn_bet"><p>1</p><p>0.7</p></Link>
-                    <Link href={"?isBet=open"} className="league_btn_bet"><p>Draw</p><p>0.7</p></Link>
-                    <Link href={"?isBet=open"} className="league_btn_bet"><p>2</p><p>0.7</p></Link>
-                    <Link href={"?isBet=open"} className="league_btn_arrow">
+                    <button className="league_btn_bet"><p>1</p><p>0.7</p></button>
+                    <button className="league_btn_bet"><p>Draw</p><p>0.7</p></button>
+                    <button className="league_btn_bet"><p>2</p><p>0.7</p></button>
+                    <button className="league_btn_arrow">
                         <Image src={arrow_down} alt='arrow' style={{ width: "22px" }} />
-                    </Link>
+                    </button>
                 </div>
             </div>
         )
