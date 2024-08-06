@@ -85,6 +85,8 @@ export const HighlightComp = ({ isActive, fixture, favFixtures }: { isActive: bo
         }
     }, [user])
 
+    console.log("FIXTURE", fixture)
+
     if(fixtureData){
         return(
             <div className="highlight_box">
