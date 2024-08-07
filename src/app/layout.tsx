@@ -10,6 +10,7 @@ import { GlobalContextProvider } from "@/context/store";
 import { ClerkProvider } from "@clerk/nextjs";
 import BetModalInitiator from "@/modals/bet_modal_initiator";
 import BettingModal from "@/modals/betting_modal";
+import { BetOptionsModal } from "@/modals/bet_options_modal";
 
 const montserrat = Montserrat({ subsets: ["latin"], variable: '--font-mont' });
 
@@ -43,6 +44,7 @@ export default async function RootLayout({
           <GlobalContextProvider>
             <BetModalInitiator />
             <BettingModal />
+            <BetOptionsModal />
             <MainNav />
             {children}
             <FeedbackComp />

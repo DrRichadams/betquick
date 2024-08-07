@@ -1,0 +1,58 @@
+.betOptionsModalContainer {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2500;
+    /* background-color: rgba(0, 0, 0, 0.664); */
+    /* background-color: #B6B6B6; */
+    background-color: #b6b6b6af;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bet_options_container {
+    background-color: #1F1F1F;
+    /* max-height: fit-content; */
+    /* height: auto; */
+    width: 430px;
+    padding: 20px 12px;
+    border-radius: 8px;
+}
+
+.box_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box_teams_activity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.betting_btn_set {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    margin: 4px 0 12px 0;
+}
+
+.bet_btn {
+    background-color: #404040;
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.market_title {
+    color:#999999;
+    font-size: .8rem;
+}
