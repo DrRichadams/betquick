@@ -19,6 +19,7 @@
     width: 430px;
     padding: 20px 12px;
     border-radius: 8px;
+    position: relative;
 }
 
 .box_title {
@@ -31,6 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 12px;
 }
 
 .betting_btn_set {
@@ -55,4 +57,43 @@
 .market_title {
     color:#999999;
     font-size: .8rem;
+}
+
+.box_right_title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.box_right_title button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+
+.league_name,
+.time_of_game,
+.team_box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.league_name {
+    color: #B3B3B3;
+    font-size: .8rem;
+}
+
+.time_of_game {
+    color: #FFC000;
+    font-size: .8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.team_box {
+    color: #ffffffd9;
+    font-weight: 300;
+    font-size: .85rem;
 }
