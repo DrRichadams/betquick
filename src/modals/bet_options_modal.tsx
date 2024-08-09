@@ -14,6 +14,7 @@ import { useSearchParams } from "next/navigation";
 import graph from "../../../public/pngs/graph.png"
 import arrow_down from "../../../public/pngs/arrow_down_green.png"
 import React, { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { db } from "@/app/firebase/config";
 import { useUser } from "@clerk/nextjs";
@@ -26,26 +27,48 @@ import Link from "next/link";
 export const BetOptionsModal = () => {
     const searchParams = useSearchParams();
     const isBettingOptions = searchParams.get("isBettingOptions")
+    const router = useRouter()
+
+    const isBetting = searchParams.get("isBetting")
+    const betMode = searchParams.get("betMode")
+    const betMarket = searchParams.get("betMarket")
+    const betSharingVal = searchParams.get("betSharing")
+    const betSystemsMode = searchParams.get("betSystemsMode")
+
+    const pathname = usePathname();
+
+    const handleModeChange = (bettingOption: string) => { 
+        const queryString = new URLSearchParams({
+          isBetting: `${isBetting}`,
+          betMode: `${betMode}`,
+          betSharing: `${betSharingVal}`,
+          betMarket: `${betMarket}`,
+          betSystemsMode: `${betSystemsMode}`,
+          isBettingOptions: `${bettingOption}`
+        }).toString();
+      
+        router.push(`${pathname}?${queryString}`); 
+ }
 
     if(isBettingOptions && isBettingOptions == "expand") {
         return(
-            <div className={styles.betOptionsModalContainer}>
-                <div className={styles.bet_options_container}>
+            <div className={styles.betOptionsModalContainer} onClick={() => handleModeChange("collapse")}>
+                <div className={styles.bet_options_container} onClick = {(e) => e.stopPropagation()}>
                     <div className={styles.box_title}>
                         <div className={styles.box_left_title}>
                             <div className={styles.league_name}>
-                                <IoIosFootball />
+                                <IoIosFootball size={20} />
                                 <p>Premier League</p>
                             </div>
                             <div className={styles.time_of_game}>
-                                <GoClockFill />
+                                <GoClockFill size={12} />
                                 <p>Today at 6:30AM</p>
                             </div>
                         </div>
                         <div className={styles.box_right_title}>
                             {/* <button><FaStar  color="#fff" size={22}/></button> */}
                             {/* <button><FaRegStar  color="#fff"/></button> */}
-                            <button><IoIosCloseCircle color="orange" size={24} /></button>
+                            <button onClick={() => handleModeChange("collapse")}><IoIosCloseCircle color="orange" size={24} /></button>
                         </div>
                     </div>
                     <div className={styles.box_teams_activity}>

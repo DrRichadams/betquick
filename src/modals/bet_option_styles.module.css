@@ -82,7 +82,7 @@
 
 .league_name {
     color: #B3B3B3;
-    font-size: .8rem;
+    font-size: .87rem;
 }
 
 .time_of_game {
@@ -90,6 +90,8 @@
     font-size: .8rem;
     font-weight: 600;
     margin-bottom: 8px;
+    margin-left: 8px;
+    margin-top: 2px;
 }
 
 .team_box {

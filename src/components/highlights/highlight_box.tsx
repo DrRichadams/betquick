@@ -108,7 +108,8 @@ export const HighlightComp = ({ isActive, fixture, favFixtures }: { isActive: bo
                     <div className="highlight_middle_left">
                         <div className="league_match_time">
                             <Image src={timer} alt='timer' style={{ width: "15px" }} />
-                            <p>Today at 6:30AM</p>
+                            {/* <p>Today at 6:30AM</p> */}
+                            <p>{fixture?.starting_at}</p>
                         </div>
                         <div className="league_teams">
                             {
